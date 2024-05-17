@@ -242,31 +242,7 @@ margin-top: 0em; /* Remove top margin */
 </div>
 
 <footer class="footer">
-<p id="footerText"></p>
-<button onclick="exportPDF()">Export as PDF</button>
+<p>This resume has been updated by V Krishna Kumar as of May 2024</p>
 </footer>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-<script>
-const { jsPDF } = window.jspdf;
-
-function exportPDF() {
-    const doc = new jsPDF();
-    doc.html(document.body, {
-        callback: function (doc) {
-            doc.save('V_Krishna_Kumar_CV.pdf');
-        },
-        x: 10,
-        y: 10
-    });
-}
-
-// Get the current month and year
-const date = new Date();
-const month = date.toLocaleString('default', { month: 'long' });
-const year = date.getFullYear();
-document.getElementById('footerText').textContent = `This resume has been updated by V Krishna Kumar as of ${month} ${year}`;
-</script>
-
 </body>
 </html>
