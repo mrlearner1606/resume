@@ -6,78 +6,86 @@
 <title>V Krishna Kumar - Senior Analyst</title>
 <style>
 body {
-font-family: Arial, sans-serif;
-margin: 0;
-padding: 0;
-background-color: #f4f4f4;
-color: #333;
-line-height: 1.5;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.5;
 }
 .container {
-width: 80%;
-margin: auto;
-overflow: hidden;
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
 }
 header {
-background: #333;
-color: #fff;
-padding-top: 30px;
-min-height: 70px;
-border-bottom: #77a6b6 3px solid;
+    background: #333;
+    color: #fff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #77a6b6 3px solid;
 }
 header a {
-color: #fff;
-text-decoration: none;
-text-transform: uppercase;
-font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
 }
 header ul {
-padding: 0;
-list-style: none;
-margin-top: 2em;
-margin-bottom: 0.5em;
+    padding: 0;
+    list-style: none;
+    margin-top: 2em;
+    margin-bottom: 0.5em;
 }
 header li {
-display: inline;
-padding: 0 20px 0 20px;
+    display: inline;
+    padding: 0 20px 0 20px;
 }
 .main {
-padding: 20px;
-background: #fff;
-margin-top: 20px;
+    padding: 20px;
+    background: #fff;
+    margin-top: 20px;
 }
 .footer {
-padding: 20px;
-margin-top: 20px;
-color: #fff;
-background-color: #333;
-text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    color: #fff;
+    background-color: #333;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    left: 0;
+    right: 0;
 }
 table {
-width: 100%;
-border-collapse: collapse;
-margin: 20px 0;
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
 }
 table, th, td {
-border: 1px solid #ddd;
+    border: 1px solid #ddd;
 }
 th, td {
-padding: 12px;
-text-align: left;
+    padding: 12px;
+    text-align: left;
+    white-space: nowrap; /* Prevent text from wrapping */
 }
 th {
-background-color: #f2f2f2;
+    background-color: #f2f2f2;
+}
+.responsibilities {
+    white-space: normal; /* Allow text wrapping for Responsibilities column */
 }
 ul {
-list-style-type: disc;
-padding-left: 20px;
+    list-style-type: disc;
+    padding-left: 20px;
 }
 h1 {
-margin-bottom: 0em; /* Adjust this value to control the spacing */
+    margin-bottom: 0em; /* Adjust this value to control the spacing */
 }
 h2 {
-font-size: 16px;
-margin-top: 0em; /* Remove top margin */
+    font-size: 16px;
+    margin-top: 0em; /* Remove top margin */
 }
 </style>
 </head>
@@ -131,23 +139,23 @@ margin-top: 0em; /* Remove top margin */
 <th>Responsibilities</th>
 </tr>
 <tr>
-	<td>2023 - Present</td>
-	<td>Senior Analyst</td>
-	<td><a href="https://www.empower.com/">Empower</a></td>
-	<td>
-		<ul>
-			<li>Automated the process of payment registry systems which helped in saving 30 mins of manual effort on a daily basis.</li>
-			<li>Automated email extraction process using graph API and generated a report, which helps in saving 2 hours of manual effort on a daily basis.</li>
-			<li>Worked on Amazon Textract to extract table information from PDF files and converting it into excel files. This helped in saving 1 hour of manual effort on a daily basis.</li>
-			<li>Deployed multiple python jobs in AWS Lambda.</li>
-		</ul>
-	</td>
+    <td>2023 - Present</td>
+    <td>Senior Analyst</td>
+    <td><a href="https://www.empower.com/">Empower</a></td>
+    <td class="responsibilities">
+        <ul>
+            <li>Automated the process of payment registry systems which helped in saving 30 mins of manual effort on a daily basis.</li>
+            <li>Automated email extraction process using graph API and generated a report, which helps in saving 2 hours of manual effort on a daily basis.</li>
+            <li>Worked on Amazon Textract to extract table information from PDF files and converting it into excel files. This helped in saving 1 hour of manual effort on a daily basis.</li>
+            <li>Deployed multiple python jobs in AWS Lambda.</li>
+        </ul>
+    </td>
 </tr>
 <tr>
 <td>2021 - 2023</td>
 <td>Analyst</td>
 <td><a href="https://www.empower.com/">Empower</a></td>
-<td>
+<td class="responsibilities">
 <ul>
 <li>Took the lead in automating the tax reporting process using SAS and Python, saving 45 minutes of daily manual work and $30,000 in vendor costs.</li>
 <li>Automated email deletion from team mailbox with Python, saving 30 minutes monthly.</li>
@@ -161,7 +169,7 @@ margin-top: 0em; /* Remove top margin */
 <td>May 2020 - Sep 2020</td>
 <td>Intern</td>
 <td><a href="https://www.empower.com/">Empower</a></td>
-<td>
+<td class="responsibilities">
 <ul>
 <li>Using Topic Modeling, classified the unclassified texts and then built a logistic regression classification model based on this data, achieving 80% accuracy. This model was used to classify new data.</li>
 <li>Constructed a Tableau dashboard to visualize findings, aiding in identifying reasons for forms labeled as Not In Good Order (NIGO).</li>
@@ -173,7 +181,7 @@ margin-top: 0em; /* Remove top margin */
 <td>2014 - 2019</td>
 <td>IT Analyst</td>
 <td><a href="https://www.tcs.com/">TCS</a></td>
-<td>
+<td class="responsibilities">
 <ul>
 <li>Communicated with clients to gather and update requirements.</li>
 <li>Developed or modified reports per client specifications.</li>
@@ -196,7 +204,6 @@ margin-top: 0em; /* Remove top margin */
 <li>Won "On the Spot" award for dedication and sincerity at TCS</li>
 </ul>
 </div>
-
 
 <div class="main" id="education">
 <h2>Education</h2>
