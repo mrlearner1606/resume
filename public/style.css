@@ -20,3 +20,42 @@ a { color: #66d9ef; }
 h1, h2, h3, h4 {
   color: #00bfa5;
 }
+
+.tabs {
+  display: flex;
+  border-bottom: 2px solid #00bfa5;
+  margin-bottom: 1rem;
+}
+
+.tab {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  color: #66d9ef;
+  border: none;
+  background: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.tab:hover {
+  background-color: #00bfa5;
+  color: #0f0f0f;
+}
+
+.tab.active {
+  border-bottom: 3px solid #00bfa5;
+  color: #00bfa5;
+  font-weight: bold;
+}
+
+.profile-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.tab-content {
+  margin-top: 1.5rem;
+}
