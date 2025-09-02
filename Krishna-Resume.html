@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V Krishna Kumar - Resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #2c5aa0;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            color: #2c5aa0;
+            margin-bottom: 5px;
+        }
+        
+        .header h2 {
+            font-size: 1.3em;
+            color: #666;
+            font-weight: 300;
+            margin-bottom: 15px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+        
+        .contact-info span {
+            color: #555;
+            font-size: 0.95em;
+        }
+        
+        .contact-info a {
+            color: #2c5aa0;
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        .section {
+            margin-bottom: 35px;
+        }
+        
+        .section-title {
+            font-size: 1.4em;
+            color: #2c5aa0;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 5px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .skills-category {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            padding: 25px;
+            color: white;
+        }
+        
+        .category-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-align: center;
+            color: #fff;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+        }
+        
+        .skill-item {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 12px 18px;
+            border-radius: 25px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .skill-item:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .skill-icon {
+            font-size: 1.1em;
+        }
+        
+        .aws-skills {
+            background: linear-gradient(135deg, #ff9a56 0%, #ff6b6b 100%);
+        }
+        
+        .database-skills {
+            background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+        }
+        
+        .legacy-skills {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            color: #555 !important;
+        }
+        
+        .legacy-skills .skill-item {
+            color: #555 !important;
+            background: rgba(255, 255, 255, 0.8);
+        }
+        
+        .legacy-skills .skill-item:hover {
+            background: rgba(255, 255, 255, 0.95);
+        }
+        
+        .experience-item {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-left: 4px solid #2c5aa0;
+            background-color: #fafbfc;
+            border-radius: 5px;
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .job-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2c5aa0;
+        }
+        
+        .company {
+            font-weight: 600;
+            color: #444;
+            margin-top: 3px;
+        }
+        
+        .duration {
+            color: #666;
+            font-style: italic;
+            font-size: 0.95em;
+        }
+        
+        .achievements {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .achievements li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .achievements li:before {
+            content: '▸';
+            color: #2c5aa0;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .awards-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .awards-list li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .awards-list li:before {
+            content: '🏆';
+            position: absolute;
+            left: 0;
+        }
+        
+        .education-item {
+            background-color: #fafbfc;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid #28a745;
+        }
+        
+        .degree {
+            font-weight: bold;
+            color: #28a745;
+            font-size: 1.1em;
+        }
+        
+        .institution {
+            color: #555;
+            margin: 5px 0;
+        }
+        
+        .education-details {
+            display: flex;
+            justify-content: space-between;
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .job-header {
+                flex-direction: column;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .skill-item {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>V Krishna Kumar</h1>
+            <h2>Senior Analyst</h2>
+            <div class="contact-info">
+                <span>📞 (+91) 9094952806</span>
+                <span>✉️ <a href="mailto:krrish1606@gmail.com">krrish1606@gmail.com</a></span>
+                <span>🔗 <a href="https://linkedin.com/in/mrvkrishnakumar/" target="_blank">linkedin.com/in/mrvkrishnakumar/</a></span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title">Skills</h3>
+            <div class="skills-container">
+                
+                <!-- Programming & Core Technologies -->
+                <div class="skills-category">
+                    <div class="category-title">Programming & Core Technologies</div>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <i class="fab fa-python skill-icon"></i>
+                            Python
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AWS & Cloud Technologies -->
+                <div class="skills-category aws-skills">
+                    <div class="category-title">AWS & Cloud Technologies</div>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <i class="fab fa-aws skill-icon"></i>
+                            AWS Lambda
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-project-diagram skill-icon"></i>
+                            Step Functions
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-calendar-alt skill-icon"></i>
+                            Amazon EventBridge
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-file-image skill-icon"></i>
+                            Amazon Textract
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-hdd skill-icon"></i>
+                            S3 Bucket
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-database skill-icon"></i>
+                            DynamoDB
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-key skill-icon"></i>
+                            Secrets Manager
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-chart-line skill-icon"></i>
+                            CloudWatch
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-layer-group skill-icon"></i>
+                            CloudFormation
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-queue skill-icon"></i>
+                            Simple Queue Service (SQS)
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-plug skill-icon"></i>
+                            API Gateway
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Legacy Technologies -->
+                <div class="skills-category legacy-skills">
+                    <div class="category-title">Analytics & Legacy Systems</div>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <i class="fas fa-chart-bar skill-icon"></i>
+                            SAS
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-database skill-icon"></i>
+                            Basic SQL
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-chart-pie skill-icon"></i>
+                            SAP Web Intelligence
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title">Professional Experience</h3>
+            
+            <div class="experience-item">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Senior Analyst</div>
+                        <div class="company">Empower, Bangalore, IN</div>
+                    </div>
+                    <div class="duration">Aug 2023–Present</div>
+                </div>
+                <ul class="achievements">
+                    <li>Automated payment registry systems, saving 30 mins of manual effort daily and increasing overall efficiency.</li>
+                    <li>Automated email extraction using Graph API, generating reports and saving 2 hours daily through streamlined processing.</li>
+                    <li>Utilized Amazon Textract to extract table information from PDFs, converting into Excel, saving 1 hour daily. Then collaborated with the front-end team to build a Human-In-The-Loop (HITL) layer for verifying data accuracy before updating the information into the database.</li>
+                    <li>Deployed multiple Python jobs in AWS Lambda, enhancing automation and reducing manual intervention.</li>
+                    <li>Worked on multiple AWS Lambda functions, Step Functions, and API Gateway, orchestrated through CloudFormation templates.</li>
+                    <li>Designed and implemented a multi-region active-hot standby architecture, ensuring high availability and disaster recovery.</li>
+                    <li>Configured automatic region failover as part of the multi-region active-hot standby setup, ensuring seamless switch to the standby region during outages with minimal delay.</li>
+                    <li>Designed and implemented SQL validations for loan document processing using Textract to extract user document data, Python code to get the OCR'ed data, and used the cx_Oracle library to query Oracle DB and validate, reducing manual verification hours to minutes.</li>
+                    <li>For standalone AWS processes involving Lambda, S3, and Step Functions, created a metric design system in CloudWatch, integrated it into every process, and built a dashboard to visually show whether each process was successful or not, including leveraging CloudWatch Logs Insights with SQL-like queries for detailed log analysis and monitoring.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Analyst</div>
+                        <div class="company">Empower, Bangalore, IN</div>
+                    </div>
+                    <div class="duration">Jul 2021–Aug 2023</div>
+                </div>
+                <ul class="achievements">
+                    <li>Led automation of tax reporting process using SAS and Python, saving 45 minutes daily and $30,000 annually in vendor costs.</li>
+                    <li>Automated email deletion from team mailbox with Python, reducing administrative overhead by 30 minutes monthly.</li>
+                    <li>Automated Salesforce service request creation with Python, saving 5 minutes per request and improving response times.</li>
+                    <li>Automated email attachment downloads and Excel formatting, saving 2 hours daily and enhancing data processing efficiency.</li>
+                    <li>Created and implemented multiple SAS reports per user requirements, improving data accessibility and decision-making.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Intern</div>
+                        <div class="company">Empower, Bangalore, IN</div>
+                    </div>
+                    <div class="duration">May 2020–Sep 2020</div>
+                </div>
+                <ul class="achievements">
+                    <li>Leveraged Topic Modeling to classify unstructured text, then built a logistic regression model achieving 80% accuracy, used for new data classification.</li>
+                    <li>Developed a Tableau dashboard to visualize findings, identifying reasons for forms labeled as Not In Good Order (NIGO).</li>
+                    <li>Provided actionable recommendations based on insights, reducing form rejection rates and improving processing efficiency.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">IT Analyst</div>
+                        <div class="company">TCS, Chennai, IN</div>
+                    </div>
+                    <div class="duration">Nov 2014–Aug 2019</div>
+                </div>
+                <ul class="achievements">
+                    <li>Liaised with clients to gather and update requirements, ensuring project alignment with client needs.</li>
+                    <li>Developed and customized reports per client specifications, enhancing data accuracy and usability.</li>
+                    <li>Analyzed and presented data, identifying and reporting discrepancies to clients for resolution.</li>
+                    <li>Supervised a team of 2 associates, ensuring timely and accurate task completion, boosting team efficiency by 20%.</li>
+                    <li>Automated Time-Sheet report generation, saving 15 minutes daily and improving reporting efficiency.</li>
+                    <li>Developed an incident data dashboard, aiding management and client presentations, improving decision-making processes.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title">Awards</h3>
+            <ul class="awards-list">
+                <li>Received multiple recognitions for work at Empower</li>
+                <li>Won "VIP" award for automating the tax reporting process, saving 45 minutes of manual efforts per day</li>
+                <li>Won "Best Team" award for customer satisfaction at TCS</li>
+                <li>Won "On the Spot" award for dedication and sincerity at TCS</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title">Education</h3>
+            <div class="education-item">
+                <div class="degree">PGDM (Big Data Analytics)</div>
+                <div class="institution">Goa Institute of Management, Goa, IN</div>
+                <div class="education-details">
+                    <span>2019 - 2021</span>
+                    <span>CGPA: 6.33/8</span>
+                </div>
+            </div>
+            <div class="education-item">
+                <div class="degree">B.Tech (Mechanical)</div>
+                <div class="institution">SRM University, Chennai, IN</div>
+                <div class="education-details">
+                    <span>2010 - 2014</span>
+                    <span>CGPA: 9.066/10</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
