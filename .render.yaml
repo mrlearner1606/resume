@@ -1,8 +1,0 @@
-services:
-  - type: web
-    name: krishna-resume
-    env: php
-    plan: free
-    buildCommand: ""
-    startCommand: ""
-    rootDir: public
