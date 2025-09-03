@@ -289,10 +289,10 @@
             margin: 15mm;
         }
         
-        /* PAGE BREAK CONTROLS */
-        .page-1-end {
-            page-break-after: always;
-        }
+        /* PAGE BREAK CONTROLS - DISABLED TO KEEP BOTH ROLES ON PAGE 1 */
+        /* .page-1-end {
+            page-break-after: always !important;
+        } */
         
         /* Print-specific styles */
         @media print {
@@ -518,10 +518,10 @@
                 justify-content: space-between !important;
             }
             
-            /* Force page break after Analyst */
-            .page-1-end {
+            /* Force page break after Analyst - DISABLED */
+            /* .page-1-end {
                 page-break-after: always !important;
-            }
+            } */
             
             /* Prevent orphans */
             .experience-item,
@@ -705,8 +705,8 @@
                 </ul>
             </div>
             
-            <!-- PAGE 1: ANALYST (NOW MOVED TO PAGE 1) -->
-            <div class="experience-item page-1-end">
+            <!-- PAGE 1: ANALYST (REMOVED page-1-end CLASS) -->
+            <div class="experience-item">
                 <div class="job-header">
                     <div>
                         <div class="job-title">Analyst</div>
