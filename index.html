@@ -20,6 +20,42 @@
             padding: 20px;
         }
         
+        /* PDF Download Button Styles */
+        .pdf-button-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .pdf-download-btn {
+            background: linear-gradient(135deg, #2c5aa0, #1e3d6f);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(44, 90, 160, 0.3);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .pdf-download-btn:hover {
+            background: linear-gradient(135deg, #1e3d6f, #2c5aa0);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(44, 90, 160, 0.4);
+        }
+        
+        .pdf-download-btn:active {
+            transform: translateY(0);
+        }
+        
+        .pdf-download-btn i {
+            font-size: 18px;
+        }
+        
         .container {
             max-width: 900px;
             margin: 0 auto;
@@ -260,6 +296,11 @@
         
         /* Print-specific styles */
         @media print {
+            /* Hide the PDF button when printing */
+            .pdf-button-container {
+                display: none !important;
+            }
+            
             * {
                 -webkit-print-color-adjust: exact !important;
                 color-adjust: exact !important;
@@ -521,10 +562,26 @@
             .skill-item span {
                 font-size: 0.85em;
             }
+            
+            .pdf-button-container {
+                margin-bottom: 15px;
+            }
+            
+            .pdf-download-btn {
+                padding: 10px 25px;
+                font-size: 14px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- PDF Download Button -->
+    <div class="pdf-button-container">
+        <button class="pdf-download-btn" onclick="downloadPDF()">
+            <i class="fas fa-download"></i>
+            Save as PDF
+        </button>
+    </div>
     <div class="container">
         <div class="header">
             <h1>V Krishna Kumar</h1>
@@ -734,5 +791,26 @@
             </div>
         </div>
     </div>
+    <script>
+        function downloadPDF() {
+            // Create a link element (like Tony Stark creating a new gadget)
+            const link = document.createElement('a');
+            
+            // Set the GitHub PDF URL (like giving coordinates to Jack Sparrow)
+            link.href = 'https://raw.githubusercontent.com/mrlearner1606/resume/main/Krishna-Resume.pdf';
+            
+            // Set the filename for download (like naming Rajni's punch dialogue)
+            link.download = 'Krishna-Resume.pdf';
+            
+            // Add the link to document (invisible, like Batman in the shadows)
+            document.body.appendChild(link);
+            
+            // Trigger the download (like Sivaji pressing the final button)
+            link.click();
+            
+            // Remove the link (clean up, like how Enthiran cleans up after mission)
+            document.body.removeChild(link);
+        }
+    </script>
 </body>
 </html>
