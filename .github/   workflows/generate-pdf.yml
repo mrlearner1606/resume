@@ -39,10 +39,10 @@ jobs:
           // Read the HTML file
           const html = fs.readFileSync('./index.html', 'utf8');
           
-          await page.setContent(html);
+          await page.setContent(html, { waitUntil: 'networkidle0' });
           
-          // Wait for any images to load
-          await page.waitForLoadState('networkidle');
+          // Wait a bit more for any remaining resources
+          await page.waitForTimeout(2000);
           
           // Generate PDF with print media type
           await page.pdf({
@@ -70,5 +70,3 @@ jobs:
         git add Krishna-Resume.pdf
         git commit -m "Auto-update resume PDF [skip ci]" || exit 0
         git push
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
