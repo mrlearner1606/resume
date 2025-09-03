@@ -1,0 +1,74 @@
+name: Generate PDF Resume
+on:
+  push:
+    paths:
+      - 'index.html'
+  workflow_dispatch: # Manual trigger option, like Rajni's emergency button
+
+jobs:
+  generate-pdf:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        
+    - name: Install Puppeteer
+      run: |
+        npm install puppeteer
+        
+    - name: Generate PDF
+      run: |
+        node -e "
+        const puppeteer = require('puppeteer');
+        const fs = require('fs');
+        
+        (async () => {
+          const browser = await puppeteer.launch({
+            headless: true,
+            args: ['--no-sandbox', '--disable-setuid-sandbox']
+          });
+          
+          const page = await browser.newPage();
+          
+          // Read the HTML file
+          const html = fs.readFileSync('./index.html', 'utf8');
+          
+          await page.setContent(html);
+          
+          // Wait for any images to load
+          await page.waitForLoadState('networkidle');
+          
+          // Generate PDF with print media type
+          await page.pdf({
+            path: 'Krishna-Resume.pdf',
+            format: 'A4',
+            margin: {
+              top: '15mm',
+              right: '15mm',
+              bottom: '15mm',
+              left: '15mm'
+            },
+            printBackground: true,
+            preferCSSPageSize: true
+          });
+          
+          await browser.close();
+          console.log('PDF generated successfully!');
+        })();
+        "
+        
+    - name: Commit and push PDF
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add Krishna-Resume.pdf
+        git commit -m "Auto-update resume PDF [skip ci]" || exit 0
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
