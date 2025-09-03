@@ -1,38 +1,71 @@
-- name: Install Puppeteer
-  run: npm install puppeteer@20.7.4
+name: Generate PDF Resume
 
-- name: Generate PDF
-  run: |
-    node -e "
-    const puppeteer = require('puppeteer');
-    const fs = require('fs');
+on:
+  push:
+    paths:
+      - 'index.html'
+  workflow_dispatch:
 
-    (async () => {
-      const browser = await puppeteer.launch({
-        headless: true,
-        args: ['--no-sandbox', '--disable-setuid-sandbox']
-      });
+jobs:
+  generate-pdf:
+    runs-on: ubuntu-latest
 
-      const page = await browser.newPage();
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
 
-      // Read the HTML file
-      const html = fs.readFileSync('./index.html', 'utf8');
+    - name: Setup Node.js environment
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
 
-      await page.setContent(html, { waitUntil: 'networkidle0' });
+    - name: Install Puppeteer
+      run: npm install puppeteer@20.7.4
 
-      // Wait extra for any resources to load
-      await page.waitForTimeout(2000);
+    - name: Generate PDF from index.html
+      run: |
+        node -e "
+        const puppeteer = require('puppeteer');
+        const fs = require('fs');
 
-      // Generate PDF with print media type
-      await page.pdf({
-        path: 'Krishna-Resume.pdf',
-        format: 'A4',
-        margin: { top: '15mm', right: '15mm', bottom: '15mm', left: '15mm' },
-        printBackground: true,
-        preferCSSPageSize: true
-      });
+        (async () => {
+          const browser = await puppeteer.launch({
+            headless: true,
+            args: ['--no-sandbox', '--disable-setuid-sandbox']
+          });
 
-      await browser.close();
-      console.log('PDF generated successfully!');
-    })();
-    "
+          const page = await browser.newPage();
+
+          const html = fs.readFileSync('./index.html', 'utf8');
+
+          await page.setContent(html, { waitUntil: 'networkidle0' });
+
+          await page.waitForTimeout(2000);
+
+          await page.pdf({
+            path: 'Krishna-Resume.pdf',
+            format: 'A4',
+            margin: {
+              top: '15mm',
+              right: '15mm',
+              bottom: '15mm',
+              left: '15mm'
+            },
+            printBackground: true,
+            preferCSSPageSize: true
+          });
+
+          await browser.close();
+          console.log('PDF generated successfully!');
+        })();
+        "
+
+    - name: Commit and push PDF
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add Krishna-Resume.pdf
+        git commit -m "Auto-update resume PDF [skip ci]" || echo "No changes to commit"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
