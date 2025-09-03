@@ -1,4 +1,4 @@
-name: Generate PDF Resume
+name: Generate PDF Resume with Cache
 
 on:
   push:
@@ -19,46 +19,54 @@ jobs:
       with:
         node-version: '18'
 
+    - name: Cache npm modules
+      uses: actions/cache@v3
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+
     - name: Install Puppeteer
       run: npm install puppeteer@20.7.4
 
     - name: Generate PDF from index.html
       run: |
-        node -e "
-        const puppeteer = require('puppeteer');
-        const path = require('path');
+        node -e '
+        const puppeteer = require("puppeteer");
+        const path = require("path");
 
         (async () => {
           const browser = await puppeteer.launch({
             headless: true,
-            args: ['--no-sandbox', '--disable-setuid-sandbox']
+            args: ["--no-sandbox", "--disable-setuid-sandbox"]
           });
 
           const page = await browser.newPage();
 
-          const filePath = `file://${path.resolve('./index.html')}`;
-          await page.goto(filePath, { waitUntil: 'networkidle0' });
+          const filePath = `file://${path.resolve("./index.html")}`;
+          await page.goto(filePath, { waitUntil: "networkidle0" });
 
-          await page.emulateMediaType('print');
+          await page.emulateMediaType("print");
           await page.waitForTimeout(2000);
 
           await page.pdf({
-            path: 'Krishna-Resume.pdf',
-            format: 'A4',
+            path: "Krishna-Resume.pdf",
+            format: "A4",
             margin: {
-              top: '15mm',
-              right: '15mm',
-              bottom: '15mm',
-              left: '15mm'
+              top: "15mm",
+              right: "15mm",
+              bottom: "15mm",
+              left: "15mm"
             },
             printBackground: true,
             preferCSSPageSize: true
           });
 
           await browser.close();
-          console.log('PDF generated successfully!');
+          console.log("PDF generated successfully!");
         })();
-        "
+        '
 
     - name: Commit and push PDF
       run: |
