@@ -40,6 +40,7 @@
             font-size: 2.5em;
             color: #2c5aa0;
             margin-bottom: 5px;
+            line-height: 1.2;
         }
         
         .header h2 {
@@ -47,27 +48,28 @@
             color: #666;
             font-weight: 300;
             margin-bottom: 15px;
+            line-height: 1.3;
         }
         
         .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
+            text-align: center;
             margin-top: 15px;
+            line-height: 1.4;
         }
         
-        .contact-info span {
+        .contact-item {
+            display: inline-block;
+            margin: 0 15px;
             color: #555;
             font-size: 0.95em;
         }
         
-        .contact-info a {
+        .contact-item a {
             color: #2c5aa0;
             text-decoration: none;
         }
         
-        .contact-info a:hover {
+        .contact-item a:hover {
             text-decoration: underline;
         }
         
@@ -83,14 +85,14 @@
             margin-bottom: 25px;
             text-transform: uppercase;
             font-weight: bold;
+            line-height: 1.3;
         }
         
-        /* Skills Section */
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px 40px;
-            align-items: center;
+        /* Clean Skills Grid Layout - NO BOXES */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px 15px;
             padding: 20px 0;
         }
         
@@ -98,11 +100,19 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            padding: 8px 5px;
+            background: none;
+            border: none;
+            transition: transform 0.2s ease;
+        }
+        
+        .skill-item:hover {
+            transform: translateX(5px);
         }
         
         .skill-item img {
-            width: 32px;
-            height: 32px;
+            width: 28px;
+            height: 28px;
             object-fit: contain;
             flex-shrink: 0;
         }
@@ -110,8 +120,8 @@
         .skill-item span {
             font-weight: 500;
             color: #333;
-            font-size: 1em;
-            white-space: nowrap;
+            font-size: 0.9em;
+            line-height: 1.3;
         }
         
         .experience-item {
@@ -134,29 +144,37 @@
             font-size: 1.2em;
             font-weight: bold;
             color: #2c5aa0;
+            line-height: 1.3;
         }
         
         .company {
             font-weight: 600;
             color: #444;
             margin-top: 3px;
+            line-height: 1.4;
         }
         
         .duration {
             color: #666;
             font-style: italic;
             font-size: 0.95em;
+            line-height: 1.3;
+            text-align: right;
         }
         
         .achievements {
             list-style: none;
             padding-left: 0;
+            line-height: 1.6;
         }
         
         .achievements li {
             margin-bottom: 8px;
             position: relative;
             padding-left: 20px;
+            line-height: 1.6;
+            text-align: justify;
+            text-justify: inter-word;
         }
         
         .achievements li:before {
@@ -167,21 +185,35 @@
             font-weight: bold;
         }
         
+        /* Awards Section with Gold Color */
+        .awards-container {
+            background-color: #fafbfc;
+            padding: 20px;
+            border-left: 4px solid #ffd700;
+            border-radius: 5px;
+        }
+        
         .awards-list {
             list-style: none;
             padding-left: 0;
+            line-height: 1.6;
         }
         
         .awards-list li {
             margin-bottom: 8px;
             padding-left: 20px;
             position: relative;
+            line-height: 1.6;
+            text-align: justify;
+            text-justify: inter-word;
         }
         
         .awards-list li:before {
-            content: '🏆';
+            content: '▸';
+            color: #ffd700;
             position: absolute;
             left: 0;
+            font-weight: bold;
         }
         
         .education-item {
@@ -196,11 +228,13 @@
             font-weight: bold;
             color: #28a745;
             font-size: 1.1em;
+            line-height: 1.3;
         }
         
         .institution {
             color: #555;
             margin: 5px 0;
+            line-height: 1.4;
         }
         
         .education-details {
@@ -208,6 +242,252 @@
             justify-content: space-between;
             color: #666;
             font-size: 0.9em;
+            line-height: 1.4;
+        }
+        
+        /* ========== PDF/PRINT STYLES ========== */
+        
+        /* Page setup for A4 printing */
+        @page {
+            size: A4;
+            margin: 15mm;
+        }
+        
+        /* PAGE BREAK CONTROLS */
+        .page-1-end {
+            page-break-after: always;
+        }
+        
+        /* Print-specific styles */
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            body {
+                background: white !important;
+                padding: 0 !important;
+                font-size: 12.1pt;
+                line-height: 1.5 !important;
+            }
+            
+            .container {
+                max-width: none !important;
+                width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                background: white !important;
+            }
+            
+            .header {
+                margin-bottom: 15px !important;
+                padding-bottom: 12px !important;
+            }
+            
+            .header h1 {
+                font-size: 24.2pt !important;
+                margin-bottom: 4px !important;
+                line-height: 1.2 !important;
+            }
+            
+            .header h2 {
+                font-size: 14.3pt !important;
+                margin-bottom: 8px !important;
+                line-height: 1.3 !important;
+            }
+            
+            /* STRONG HORIZONTAL CONTACT INFO FIX */
+            .contact-info {
+                text-align: center !important;
+                margin-top: 8px !important;
+                line-height: 1.4 !important;
+                white-space: nowrap !important;
+            }
+            
+            .contact-item {
+                display: inline-block !important;
+                margin: 0 10px !important;
+                font-size: 9.9pt !important;
+                line-height: 1.4 !important;
+                white-space: nowrap !important;
+                vertical-align: middle !important;
+            }
+            
+            .contact-item a {
+                font-size: 9.9pt !important;
+                line-height: 1.4 !important;
+                white-space: nowrap !important;
+            }
+            
+            .section {
+                margin-bottom: 15px !important;
+                break-inside: avoid;
+            }
+            
+            .section-title {
+                font-size: 14.3pt !important;
+                margin-bottom: 10px !important;
+                padding-bottom: 2px !important;
+                line-height: 1.3 !important;
+            }
+            
+            /* CLEAN SKILLS GRID FOR PRINT - NO BOXES */
+            .skills-grid {
+                display: grid !important;
+                grid-template-columns: repeat(4, 1fr) !important;
+                gap: 8px 6px !important;
+                padding: 10px 0 !important;
+            }
+            
+            .skill-item {
+                display: flex !important;
+                align-items: center !important;
+                gap: 6px !important;
+                padding: 4px 2px !important;
+                border: none !important;
+                background: none !important;
+                break-inside: avoid !important;
+            }
+            
+            .skill-item img {
+                width: 18px !important;
+                height: 18px !important;
+                object-fit: contain !important;
+                flex-shrink: 0 !important;
+            }
+            
+            .skill-item span {
+                font-size: 8.8pt !important;
+                line-height: 1.2 !important;
+                font-weight: 500 !important;
+            }
+            
+            .experience-item {
+                margin-bottom: 12px !important;
+                padding: 8px !important;
+                background-color: #f8f9fa !important;
+                border-radius: 2px !important;
+                break-inside: avoid;
+            }
+            
+            /* Awards Container for Print */
+            .awards-container {
+                padding: 8px !important;
+                margin-bottom: 12px !important;
+                background-color: #f8f9fa !important;
+                border-radius: 2px !important;
+                break-inside: avoid;
+            }
+            
+            /* FIXED JOB HEADER ALIGNMENT - FORCE RIGHT ALIGNMENT FOR DURATION */
+            .job-header {
+                position: relative !important;
+                margin-bottom: 10px !important;
+                width: 100% !important;
+                min-height: 30px !important;
+            }
+            
+            .job-header > div:first-child {
+                position: absolute !important;
+                left: 0 !important;
+                top: 0 !important;
+                width: 70% !important;
+            }
+            
+            .job-title {
+                font-size: 12.1pt !important;
+                line-height: 1.2 !important;
+                margin: 0 !important;
+            }
+            
+            .company {
+                font-size: 9.9pt !important;
+                line-height: 1.5 !important;
+                margin-top: 2px !important;
+                margin-bottom: 50px !important;
+            }
+            
+            /* FORCE DURATION TO STAY RIGHT */
+            .duration {
+                position: absolute !important;
+                right: 0 !important;
+                top: 0 !important;
+                font-size: 8.8pt !important;
+                line-height: 1.2 !important;
+                text-align: right !important;
+                width: 28% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                white-space: nowrap !important;
+            }
+            
+            .achievements {
+                line-height: 1.6 !important;
+            }
+            
+            .achievements li {
+                margin-bottom: 4px !important;
+                font-size: 8.8pt !important;
+                padding-left: 10px !important;
+                line-height: 1.6 !important;
+                text-align: justify !important;
+                text-justify: inter-word !important;
+            }
+            
+            .awards-list {
+                margin-bottom: 10px !important;
+                line-height: 1.6 !important;
+            }
+            
+            .awards-list li {
+                margin-bottom: 4px !important;
+                font-size: 8.8pt !important;
+                padding-left: 10px !important;
+                line-height: 1.6 !important;
+                text-align: justify !important;
+                text-justify: inter-word !important;
+            }
+            
+            .education-item {
+                padding: 6px 10px !important;
+                margin-bottom: 6px !important;
+                background-color: #f8f9fa !important;
+                border-radius: 2px !important;
+            }
+            
+            .degree {
+                font-size: 11pt !important;
+                line-height: 1.3 !important;
+            }
+            
+            .institution {
+                font-size: 9.9pt !important;
+                margin: 2px 0 !important;
+                line-height: 1.4 !important;
+            }
+            
+            .education-details {
+                font-size: 8.8pt !important;
+                line-height: 1.4 !important;
+                display: flex !important;
+                justify-content: space-between !important;
+            }
+            
+            /* Force page break after Analyst */
+            .page-1-end {
+                page-break-after: always !important;
+            }
+            
+            /* Prevent orphans */
+            .experience-item,
+            .education-item,
+            .awards-container {
+                page-break-inside: avoid !important;
+            }
         }
         
         @media (max-width: 768px) {
@@ -215,17 +495,18 @@
                 padding: 20px;
             }
             
-            .contact-info {
-                flex-direction: column;
-                gap: 10px;
+            .contact-item {
+                display: block;
+                margin: 5px 0;
             }
             
             .job-header {
                 flex-direction: column;
             }
             
-            .skills-container {
-                gap: 20px 25px;
+            .skills-grid {
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 15px 10px;
             }
             
             .header h1 {
@@ -233,12 +514,12 @@
             }
             
             .skill-item img {
-                width: 28px;
-                height: 28px;
+                width: 24px;
+                height: 24px;
             }
             
             .skill-item span {
-                font-size: 0.9em;
+                font-size: 0.85em;
             }
         }
     </style>
@@ -249,89 +530,91 @@
             <h1>V Krishna Kumar</h1>
             <h2>Senior Analyst</h2>
             <div class="contact-info">
-                <span>📞 (+91) 9094952806</span>
-                <span>✉️ <a href="mailto:krrish1606@gmail.com">krrish1606@gmail.com</a></span>
-                <span>🔗 <a href="https://linkedin.com/in/mrvkrishnakumar/" target="_blank">linkedin.com/in/mrvkrishnakumar/</a></span>
+                <span class="contact-item">📞 (+91) 9094952806</span>
+                <span class="contact-item">✉️ <a href="mailto:krrish1606@gmail.com">krrish1606@gmail.com</a></span>
+                <span class="contact-item">🔗 <a href="https://linkedin.com/in/mrvkrishnakumar/" target="_blank">linkedin.com/in/mrvkrishnakumar/</a></span>
             </div>
         </div>
-
+        
+        <!-- PAGE 1: SKILLS + SENIOR ANALYST + ANALYST -->
         <div class="section">
             <h3 class="section-title">Skills</h3>
-            <div class="skills-container">
+            <div class="skills-grid">
                 
-                <!-- Programming & Core Technologies -->
+                <!-- Row 1 -->
                 <div class="skill-item">
                     <img src="python-icon.png" alt="Python">
                     <span>Python</span>
                 </div>
-
-                <!-- AWS & Cloud Technologies -->
+                
                 <div class="skill-item">
                     <img src="lambda-icon.png" alt="AWS Lambda">
                     <span>AWS Lambda</span>
                 </div>
-
+                
                 <div class="skill-item">
                     <img src="step-functions-icon.png" alt="Step Functions">
                     <span>Step Functions</span>
                 </div>
-
+                
                 <div class="skill-item">
                     <img src="eventbridge-icon.png" alt="Amazon EventBridge">
                     <span>Amazon EventBridge</span>
                 </div>
-
+                
+                <!-- Row 2 -->
                 <div class="skill-item">
                     <img src="textract-icon.png" alt="Amazon Textract">
                     <span>Amazon Textract</span>
                 </div>
-
+                
                 <div class="skill-item">
                     <img src="s3-icon.png" alt="S3 Bucket">
                     <span>S3 Bucket</span>
                 </div>
-
+                
                 <div class="skill-item">
                     <img src="dynamodb-icon.png" alt="DynamoDB">
                     <span>DynamoDB</span>
                 </div>
-
+                
                 <div class="skill-item">
                     <img src="secrets-manager-icon.png" alt="Secrets Manager">
                     <span>Secrets Manager</span>
                 </div>
-
+                
+                <!-- Row 3 -->
                 <div class="skill-item">
                     <img src="cloudwatch-icon.png" alt="CloudWatch">
                     <span>CloudWatch</span>
                 </div>
-
+                
                 <div class="skill-item">
                     <img src="cloudformation-icon.png" alt="CloudFormation">
                     <span>CloudFormation</span>
                 </div>
-
+                
                 <div class="skill-item">
                     <img src="sqs-icon.png" alt="Simple Queue Service (SQS)">
                     <span>Simple Queue Service (SQS)</span>
                 </div>
-
+                
                 <div class="skill-item">
                     <img src="api-gateway-icon.png" alt="API Gateway">
                     <span>API Gateway</span>
                 </div>
-
-                <!-- Analytics & Legacy Systems -->
+                
+                <!-- Row 4 -->
                 <div class="skill-item">
                     <img src="sas-icon.png" alt="SAS">
                     <span>SAS</span>
                 </div>
-
+                
                 <div class="skill-item">
                     <img src="sql-icon.png" alt="Basic SQL">
                     <span>Basic SQL</span>
                 </div>
-
+                
                 <div class="skill-item">
                     <img src="sap-icon.png" alt="SAP Web Intelligence">
                     <span>SAP Web Intelligence</span>
@@ -339,10 +622,11 @@
                 
             </div>
         </div>
-
+        
         <div class="section">
             <h3 class="section-title">Professional Experience</h3>
             
+            <!-- PAGE 1: SENIOR ANALYST -->
             <div class="experience-item">
                 <div class="job-header">
                     <div>
@@ -363,8 +647,9 @@
                     <li>For standalone AWS processes involving Lambda, S3, and Step Functions, created a metric design system in CloudWatch, integrated it into every process, and built a dashboard to visually show whether each process was successful or not, including leveraging CloudWatch Logs Insights with SQL-like queries for detailed log analysis and monitoring.</li>
                 </ul>
             </div>
-
-            <div class="experience-item">
+            
+            <!-- PAGE 1: ANALYST (NOW MOVED TO PAGE 1) -->
+            <div class="experience-item page-1-end">
                 <div class="job-header">
                     <div>
                         <div class="job-title">Analyst</div>
@@ -380,7 +665,8 @@
                     <li>Created and implemented multiple SAS reports per user requirements, improving data accessibility and decision-making.</li>
                 </ul>
             </div>
-
+            
+            <!-- PAGE 2: INTERN + IT ANALYST -->
             <div class="experience-item">
                 <div class="job-header">
                     <div>
@@ -395,7 +681,7 @@
                     <li>Provided actionable recommendations based on insights, reducing form rejection rates and improving processing efficiency.</li>
                 </ul>
             </div>
-
+            
             <div class="experience-item">
                 <div class="job-header">
                     <div>
@@ -414,17 +700,20 @@
                 </ul>
             </div>
         </div>
-
+        
+        <!-- PAGE 2: AWARDS + EDUCATION -->
         <div class="section">
             <h3 class="section-title">Awards</h3>
-            <ul class="awards-list">
-                <li>Received multiple recognitions for work at Empower</li>
-                <li>Won "VIP" award for automating the tax reporting process, saving 45 minutes of manual efforts per day</li>
-                <li>Won "Best Team" award for customer satisfaction at TCS</li>
-                <li>Won "On the Spot" award for dedication and sincerity at TCS</li>
-            </ul>
+            <div class="awards-container">
+                <ul class="awards-list">
+                    <li>Received multiple recognitions for work at Empower</li>
+                    <li>Won "VIP" award for automating the tax reporting process, saving 45 minutes of manual efforts per day</li>
+                    <li>Won "Best Team" award for customer satisfaction at TCS</li>
+                    <li>Won "On the Spot" award for dedication and sincerity at TCS</li>
+                </ul>
+            </div>
         </div>
-
+        
         <div class="section">
             <h3 class="section-title">Education</h3>
             <div class="education-item">
