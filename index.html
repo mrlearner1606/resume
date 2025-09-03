@@ -124,7 +124,7 @@
             line-height: 1.3;
         }
         
-        /* Clean Skills Grid Layout - NO BOXES */
+        /* Desktop Skills Grid Layout - Default */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -281,22 +281,227 @@
             line-height: 1.4;
         }
         
-        /* ========== PDF/PRINT STYLES ========== */
+        /* ========== TABLET STYLES (Like Sivaji's intermediate power mode) ========== */
+        @media screen and (min-width: 769px) and (max-width: 1024px) {
+            .container {
+                max-width: 750px;
+                padding: 30px;
+            }
+            
+            .header h1 {
+                font-size: 2.2em;
+            }
+            
+            .header h2 {
+                font-size: 1.2em;
+            }
+            
+            /* Tablet Skills Grid - 3 columns like Deku's controlled power */
+            .skills-grid {
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 18px 12px;
+            }
+            
+            .skill-item img {
+                width: 26px;
+                height: 26px;
+            }
+            
+            .skill-item span {
+                font-size: 0.88em;
+            }
+            
+            .experience-item {
+                padding: 18px;
+            }
+            
+            .contact-item {
+                display: inline-block;
+                margin: 0 10px;
+                font-size: 0.9em;
+            }
+            
+            .pdf-download-btn {
+                padding: 11px 28px;
+                font-size: 15px;
+            }
+        }
         
-        /* Page setup for A4 printing */
+        /* ========== MOBILE STYLES (Like Bakugo's compact explosions) ========== */
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                padding: 20px;
+                margin: 0;
+                border-radius: 5px;
+            }
+            
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .header h2 {
+                font-size: 1.1em;
+            }
+            
+            /* Mobile Contact Info - Stack vertically like Batman's utility belt */
+            .contact-info {
+                text-align: left;
+            }
+            
+            .contact-item {
+                display: block !important;
+                margin: 8px 0 !important;
+                font-size: 0.85em;
+                text-align: left;
+            }
+            
+            /* Mobile Skills Grid - 2 columns like Jack Sparrow's dual pistols */
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 15px 8px;
+                padding: 15px 0;
+            }
+            
+            .skill-item {
+                padding: 6px 3px;
+                gap: 8px;
+            }
+            
+            .skill-item img {
+                width: 22px;
+                height: 22px;
+            }
+            
+            .skill-item span {
+                font-size: 0.8em;
+            }
+            
+            /* Mobile Job Header - Stack like Maanadu's time loops */
+            .job-header {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+            }
+            
+            .duration {
+                text-align: left !important;
+                margin-top: 5px;
+                font-size: 0.85em;
+            }
+            
+            .job-title {
+                font-size: 1.1em;
+            }
+            
+            .company {
+                font-size: 0.9em;
+            }
+            
+            .experience-item {
+                padding: 15px;
+                margin-bottom: 20px;
+            }
+            
+            .achievements li {
+                font-size: 0.85em;
+                padding-left: 15px;
+                margin-bottom: 6px;
+            }
+            
+            .awards-list li {
+                font-size: 0.85em;
+                padding-left: 15px;
+            }
+            
+            .section-title {
+                font-size: 1.2em;
+            }
+            
+            .pdf-download-btn {
+                padding: 10px 20px;
+                font-size: 14px;
+                gap: 8px;
+            }
+            
+            .pdf-download-btn i {
+                font-size: 16px;
+            }
+            
+            .education-item {
+                padding: 12px 15px;
+            }
+            
+            .degree {
+                font-size: 1em;
+            }
+            
+            .institution {
+                font-size: 0.85em;
+            }
+            
+            .education-details {
+                flex-direction: column;
+                gap: 2px;
+            }
+            
+            .education-details span {
+                font-size: 0.8em;
+            }
+        }
+        
+        /* ========== LARGE DESKTOP STYLES (Like Rajni's full power mode) ========== */
+        @media screen and (min-width: 1200px) {
+            .container {
+                max-width: 1000px;
+                padding: 50px;
+            }
+            
+            .header h1 {
+                font-size: 2.8em;
+            }
+            
+            .header h2 {
+                font-size: 1.4em;
+            }
+            
+            /* Large Desktop Skills Grid - 5 columns like Enthiran's multiple arms */
+            .skills-grid {
+                grid-template-columns: repeat(5, 1fr) !important;
+                gap: 25px 18px;
+            }
+            
+            .skill-item img {
+                width: 32px;
+                height: 32px;
+            }
+            
+            .skill-item span {
+                font-size: 0.95em;
+            }
+            
+            .experience-item {
+                padding: 25px;
+            }
+            
+            .achievements li {
+                font-size: 0.95em;
+            }
+        }
+        
+        /* ========== PRINT STYLES (Your existing print styles remain the same) ========== */
         @page {
             size: A4;
             margin: 15mm;
         }
         
-        /* PAGE BREAK CONTROLS */
         .page-1-end {
             page-break-after: always;
         }
         
-        /* Print-specific styles */
         @media print {
-            /* Hide the PDF button when printing */
             .pdf-button-container {
                 display: none !important;
             }
@@ -341,7 +546,6 @@
                 line-height: 1.3 !important;
             }
             
-            /* STRONG HORIZONTAL CONTACT INFO FIX */
             .contact-info {
                 text-align: center !important;
                 margin-top: 8px !important;
@@ -376,7 +580,6 @@
                 line-height: 1.3 !important;
             }
             
-            /* CLEAN SKILLS GRID FOR PRINT - NO BOXES */
             .skills-grid {
                 display: grid !important;
                 grid-template-columns: repeat(4, 1fr) !important;
@@ -415,7 +618,6 @@
                 break-inside: avoid;
             }
             
-            /* Awards Container for Print */
             .awards-container {
                 padding: 8px !important;
                 margin-bottom: 12px !important;
@@ -424,7 +626,6 @@
                 break-inside: avoid;
             }
             
-            /* FIXED JOB HEADER ALIGNMENT - FORCE RIGHT ALIGNMENT FOR DURATION */
             .job-header {
                 position: relative !important;
                 margin-bottom: 10px !important;
@@ -452,7 +653,6 @@
                 margin-bottom: 50px !important;
             }
             
-            /* FORCE DURATION TO STAY RIGHT */
             .duration {
                 position: absolute !important;
                 right: 0 !important;
@@ -518,58 +718,14 @@
                 justify-content: space-between !important;
             }
             
-            /* Force page break after Analyst */
             .page-1-end {
                 page-break-after: always !important;
             }
             
-            /* Prevent orphans */
             .experience-item,
             .education-item,
             .awards-container {
                 page-break-inside: avoid !important;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .container {
-                padding: 20px;
-            }
-            
-            .contact-item {
-                display: block;
-                margin: 5px 0;
-            }
-            
-            .job-header {
-                flex-direction: column;
-            }
-            
-            .skills-grid {
-                grid-template-columns: repeat(3, 1fr) !important;
-                gap: 15px 10px;
-            }
-            
-            .header h1 {
-                font-size: 2em;
-            }
-            
-            .skill-item img {
-                width: 24px;
-                height: 24px;
-            }
-            
-            .skill-item span {
-                font-size: 0.85em;
-            }
-            
-            .pdf-button-container {
-                margin-bottom: 15px;
-            }
-            
-            .pdf-download-btn {
-                padding: 10px 25px;
-                font-size: 14px;
             }
         }
     </style>
@@ -593,12 +749,9 @@
             </div>
         </div>
         
-        <!-- PAGE 1: SKILLS + SENIOR ANALYST + ANALYST -->
         <div class="section">
             <h3 class="section-title">Skills</h3>
             <div class="skills-grid">
-                
-                <!-- Row 1 -->
                 <div class="skill-item">
                     <img src="python-icon.png" alt="Python">
                     <span>Python</span>
@@ -619,7 +772,6 @@
                     <span>Amazon EventBridge</span>
                 </div>
                 
-                <!-- Row 2 -->
                 <div class="skill-item">
                     <img src="textract-icon.png" alt="Amazon Textract">
                     <span>Amazon Textract</span>
@@ -640,7 +792,6 @@
                     <span>Secrets Manager</span>
                 </div>
                 
-                <!-- Row 3 -->
                 <div class="skill-item">
                     <img src="cloudwatch-icon.png" alt="CloudWatch">
                     <span>CloudWatch</span>
@@ -661,7 +812,6 @@
                     <span>API Gateway</span>
                 </div>
                 
-                <!-- Row 4 -->
                 <div class="skill-item">
                     <img src="sas-icon.png" alt="SAS">
                     <span>SAS</span>
@@ -676,14 +826,12 @@
                     <img src="sap-icon.png" alt="SAP Web Intelligence">
                     <span>SAP Web Intelligence</span>
                 </div>
-                
             </div>
         </div>
         
         <div class="section">
             <h3 class="section-title">Professional Experience</h3>
             
-            <!-- PAGE 1: SENIOR ANALYST -->
             <div class="experience-item">
                 <div class="job-header">
                     <div>
@@ -705,7 +853,6 @@
                 </ul>
             </div>
             
-            <!-- PAGE 1: ANALYST (NOW MOVED TO PAGE 1) -->
             <div class="experience-item page-1-end">
                 <div class="job-header">
                     <div>
@@ -723,7 +870,6 @@
                 </ul>
             </div>
             
-            <!-- PAGE 2: INTERN + IT ANALYST -->
             <div class="experience-item">
                 <div class="job-header">
                     <div>
@@ -758,7 +904,6 @@
             </div>
         </div>
         
-        <!-- PAGE 2: AWARDS + EDUCATION -->
         <div class="section">
             <h3 class="section-title">Awards</h3>
             <div class="awards-container">
