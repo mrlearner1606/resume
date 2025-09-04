@@ -1,0 +1,62 @@
+name: Generate PDF with Playwright
+on:
+  push:
+    paths:
+      - 'index.html'
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  generate-pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install Playwright
+        run: |
+          npm init -y
+          npm install playwright
+          npx playwright install chromium
+
+      - name: Generate PDF
+        run: |
+          node -e "
+          const { chromium } = require('playwright');
+          const fs = require('fs');
+          
+          (async () => {
+            const browser = await chromium.launch();
+            const page = await browser.newPage();
+            
+            const html = fs.readFileSync('index.html', 'utf8');
+            await page.setContent(html);
+            
+            // Wait for all content to load (like waiting for Maanadu's time loop to complete)
+            await page.waitForLoadState('networkidle');
+            
+            await page.pdf({
+              path: 'Krishna-Resume.pdf',
+              format: 'A4',
+              printBackground: true,
+              margin: { top: '15mm', right: '15mm', bottom: '15mm', left: '15mm' }
+            });
+            
+            await browser.close();
+            console.log('PDF ready! Like Jack Sparrow finding his treasure! 🏴‍☠️');
+          })();
+          "
+
+      - name: Upload PDF
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action Bot"
+          git add Krishna-Resume.pdf
+          git commit -m "🤖 Auto-updated PDF from HTML changes" || echo "No changes"
+          git push
