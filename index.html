@@ -221,6 +221,47 @@
             font-weight: bold;
         }
         
+        /* Personal Projects Section Styles */
+        .projects-container {
+            background-color: #fafbfc;
+            padding: 20px;
+            border-left: 4px solid #2c5aa0;
+            border-radius: 5px;
+        }
+        
+        .projects-list {
+            list-style: none;
+            padding-left: 0;
+            line-height: 1.6;
+        }
+        
+        .projects-list li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+            line-height: 1.6;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+        
+        .projects-list li:before {
+            content: '▸';
+            color: #2c5aa0;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .github-link {
+            color: #2c5aa0;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .github-link:hover {
+            text-decoration: underline;
+        }
+        
         /* Awards Section with Blue Color (Changed from Gold) */
         .awards-container {
             background-color: #fafbfc;
@@ -409,6 +450,11 @@
                 font-size: 0.85em;
                 padding-left: 15px;
                 margin-bottom: 6px;
+            }
+            
+            .projects-list li {
+                font-size: 0.85em;
+                padding-left: 15px;
             }
             
             .awards-list li {
@@ -618,6 +664,14 @@
                 break-inside: avoid;
             }
             
+            .projects-container {
+                padding: 8px !important;
+                margin-bottom: 12px !important;
+                background-color: #f8f9fa !important;
+                border-radius: 2px !important;
+                break-inside: avoid;
+            }
+            
             .awards-container {
                 padding: 8px !important;
                 margin-bottom: 12px !important;
@@ -679,6 +733,20 @@
                 text-justify: inter-word !important;
             }
             
+            .projects-list {
+                margin-bottom: 10px !important;
+                line-height: 1.6 !important;
+            }
+            
+            .projects-list li {
+                margin-bottom: 4px !important;
+                font-size: 8.8pt !important;
+                padding-left: 10px !important;
+                line-height: 1.6 !important;
+                text-align: justify !important;
+                text-justify: inter-word !important;
+            }
+            
             .awards-list {
                 margin-bottom: 10px !important;
                 line-height: 1.6 !important;
@@ -724,6 +792,7 @@
             
             .experience-item,
             .education-item,
+            .projects-container,
             .awards-container {
                 page-break-inside: avoid !important;
             }
@@ -755,6 +824,16 @@
                 <div class="skill-item">
                     <img src="python-icon.png" alt="Python">
                     <span>Python</span>
+                </div>
+				
+				<div class="skill-item">
+                    <img src="ai-icon.png" alt="Python">
+                    <span>AI integration (via API)</span>
+                </div>
+				
+				<div class="skill-item">
+                    <img src="langchain-icon.png" alt="Python">
+                    <span>Langchain Basics</span>
                 </div>
                 
                 <div class="skill-item">
@@ -898,6 +977,15 @@
                     <li>Supervised a team of 2 associates, ensuring timely and accurate task completion, boosting team efficiency by 20%.</li>
                     <li>Automated Time-Sheet report generation, saving 15 minutes daily and improving reporting efficiency.</li>
                     <li>Developed an incident data dashboard, aiding management and client presentations, improving decision-making processes.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h3 class="section-title">Personal Projects</h3>
+            <div class="projects-container">
+                <ul class="projects-list">
+                    <li>Developed a Retrieval-Augmented Generation (RAG) chatbot using Langchain, HuggingFace, and Flask with open-source tools to enable multi-format document Q&A. Integrated support for PDFs (with OCR), text, CSV, Excel, DOCX, and JSON files, with a user-friendly web interface and session-based chat memory for personalized assistance. The GitHub repository is available at: <a href="https://github.com/mrlearner1606/RAG_Chatbot" target="_blank" class="github-link">RAG_Chatbot</a></li>
                 </ul>
             </div>
         </div>
