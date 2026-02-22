@@ -8,429 +8,73 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Source Sans 3', sans-serif;
-            background-color: #f0ebe0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 30px 15px;
-            min-height: 100vh;
-        }
-
-        .pdf-button-container {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .pdf-download-btn {
-            background: #4a3728;
-            color: #f0ebe0;
-            border: none;
-            padding: 12px 28px;
-            font-family: 'Source Sans 3', sans-serif;
-            font-size: 14px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            border-radius: 2px;
-            cursor: pointer;
-            transition: background 0.2s ease;
-        }
-
-        .pdf-download-btn:hover {
-            background: #2e2218;
-        }
-
-        .resume {
-            width: 100%;
-            max-width: 960px;
-            background-color: #f7f2e8;
-            display: flex;
-            box-shadow: 0 8px 40px rgba(0,0,0,0.15);
-        }
-
-        .left-col {
-            flex: 1 1 60%;
-            padding: 50px 40px 50px 48px;
-            border-right: 1px solid #ddd8cc;
-        }
-
-        .name-block {
-            margin-bottom: 28px;
-        }
-
-        .name-block h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.8em;
-            color: #1a1a1a;
-            line-height: 1.1;
-            letter-spacing: -0.5px;
-        }
-
-        .name-block .role {
-            font-size: 1em;
-            font-weight: 300;
-            color: #666;
-            margin-top: 4px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .section-heading {
-            font-family: 'Source Sans 3', sans-serif;
-            font-size: 0.75em;
-            font-weight: 700;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: #1a1a1a;
-            margin-bottom: 20px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #1a1a1a;
-        }
-
-        .section {
-            margin-bottom: 36px;
-        }
-
-        .entry {
-            display: flex;
-            gap: 16px;
-            margin-bottom: 22px;
-        }
-
-        .entry-dot-col {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 4px;
-        }
-
-        .dot {
-            width: 11px;
-            height: 11px;
-            border-radius: 50%;
-            border: 2px solid #4a3728;
-            background: transparent;
-            flex-shrink: 0;
-        }
-
-        .dot-line {
-            width: 1px;
-            flex: 1;
-            background-color: #c8bfb0;
-            margin-top: 5px;
-        }
-
-        .entry-content {
-            flex: 1;
-            padding-bottom: 10px;
-        }
-
-        .entry-title {
-            font-size: 0.95em;
-            font-weight: 700;
-            color: #1a1a1a;
-            margin-bottom: 2px;
-        }
-
-        .entry-company {
-            font-size: 0.82em;
-            font-weight: 600;
-            color: #4a3728;
-            margin-bottom: 2px;
-        }
-
-        .entry-date {
-            font-size: 0.78em;
-            color: #888;
-            font-style: italic;
-            margin-bottom: 8px;
-        }
-
-        .entry-desc {
-            font-size: 0.83em;
-            color: #444;
-            line-height: 1.7;
-        }
-
-        .entry-desc li {
-            list-style: none;
-            padding-left: 12px;
-            position: relative;
-            margin-bottom: 4px;
-        }
-
-        .entry-desc li::before {
-            content: '›';
-            position: absolute;
-            left: 0;
-            color: #4a3728;
-            font-weight: 700;
-        }
-
-        .right-col {
-            flex: 0 0 38%;
-            background-color: #ede8db;
-            padding: 50px 30px 50px 30px;
-        }
-
-        .photo-box {
-            width: 100%;
-            height: 160px;
-            background-color: #d4cbbe;
-            border-radius: 2px;
-            margin-bottom: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8em;
-            color: #888;
-            letter-spacing: 1px;
-        }
-
-        .contact-block {
-            margin-bottom: 30px;
-        }
-
-        .contact-item {
-            font-size: 0.82em;
-            color: #444;
-            margin-bottom: 8px;
-            display: flex;
-            gap: 8px;
-            align-items: flex-start;
-        }
-
-        .contact-label {
-            font-weight: 700;
-            color: #1a1a1a;
-            min-width: 50px;
-            font-size: 0.82em;
-        }
-
-        .contact-item a {
-            color: #4a3728;
-            text-decoration: none;
-            word-break: break-all;
-        }
-
-        .contact-item a:hover {
-            text-decoration: underline;
-        }
-
-        .r-section-heading {
-            font-size: 0.75em;
-            font-weight: 700;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: #1a1a1a;
-            margin-bottom: 14px;
-            padding-bottom: 6px;
-            border-bottom: 2px solid #1a1a1a;
-        }
-
-        .r-section {
-            margin-bottom: 28px;
-        }
-
-        .skills-list {
-            list-style: none;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0;
-        }
-
-        .skills-list li {
-            font-size: 0.83em;
-            color: #444;
-            padding: 5px 0;
-            border-bottom: 1px solid #d4cbbe;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .skills-list li::before {
-            content: '';
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background-color: #4a3728;
-            flex-shrink: 0;
-        }
-
-        .awards-list {
-            list-style: none;
-        }
-
-        .awards-list li {
-            font-size: 0.82em;
-            color: #444;
-            padding: 5px 0;
-            border-bottom: 1px solid #d4cbbe;
-            display: flex;
-            align-items: flex-start;
-            gap: 8px;
-            line-height: 1.5;
-        }
-
-        .awards-list li::before {
-            content: '';
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background-color: #4a3728;
-            flex-shrink: 0;
-            margin-top: 5px;
-        }
-
-        /* Page 2 spacer - hidden on screen */
-        .page2-spacer {
-            display: none;
-        }
-
-        .page-break-before { display: contents; }
-
-        @page {
-            size: A4;
-            margin: 0;
-        }
-
-        @media print {
-            .pdf-button-container { display: none !important; }
-
-            * {
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-            }
-
-            html {
-                background-color: #f7f2e8 !important;
-            }
-
-            body {
-                background-color: #f7f2e8 !important;
-                padding: 0 !important;
-                margin: 0 !important;
-                width: 100% !important;
-            }
-
-            .resume {
-                box-shadow: none !important;
-                max-width: 100% !important;
-                width: 100% !important;
-                margin: 0 !important;
-                padding: 0 !important;
-            }
-
-            .left-col {
-                background-color: #f7f2e8 !important;
-                padding: 10mm 22px 10mm 24px !important;
-            }
-
-            .right-col {
-                background-color: #ede8db !important;
-                padding: 10mm 18px 10mm 18px !important;
-            }
-
-            .name-block { margin-bottom: 7px !important; }
-            .name-block h1 { font-size: 1.75em !important; }
-            .name-block .role { font-size: 0.74em !important; }
-
-            .section { margin-bottom: 10px !important; }
-
-            .section-heading, .r-section-heading {
-                font-size: 0.66em !important;
-                margin-bottom: 6px !important;
-                padding-bottom: 3px !important;
-            }
-
-            .entry { margin-bottom: 7px !important; gap: 8px !important; }
-            .entry-content { padding-bottom: 2px !important; }
-            .entry-title { font-size: 0.80em !important; }
-            .entry-company { font-size: 0.73em !important; }
-            .entry-date { font-size: 0.68em !important; margin-bottom: 3px !important; }
-
-            .entry-desc { font-size: 0.72em !important; line-height: 1.45 !important; }
-            .entry-desc li { margin-bottom: 1px !important; }
-
-            .photo-box { height: 100px !important; margin-bottom: 14px !important; font-size: 0.7em !important; }
-
-            .r-section { margin-bottom: 14px !important; }
-            .contact-item, .contact-label { font-size: 0.75em !important; margin-bottom: 4px !important; }
-            .skills-list li, .awards-list li { font-size: 0.74em !important; padding: 3px 0 !important; }
-            .dot { width: 8px !important; height: 8px !important; }
-
-            .page-break-before {
-                page-break-before: always !important;
-                break-before: page !important;
-                display: flex !important;
-            }
-
-            /* FIX: Match resume background color instead of white */
-            .page2-spacer {
-                display: block !important;
-                page-break-before: always !important;
-                break-before: page !important;
-                height: 1.4em !important;
-                background-color: #f7f2e8 !important;
-                width: 100% !important;
-                margin: 0 !important;
-                padding: 0 !important;
-            }
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Source Sans 3', sans-serif; background-color: #f0ebe0; display: flex; flex-direction: column; align-items: center; padding: 30px 15px; min-height: 100vh; }
+        .pdf-button-container { text-align: center; margin-bottom: 20px; }
+        .pdf-download-btn { background: #4a3728; color: #f0ebe0; border: none; padding: 12px 28px; font-family: 'Source Sans 3', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; border-radius: 2px; cursor: pointer; transition: background 0.2s ease; text-decoration: none; display: inline-block; }
+        .pdf-download-btn:hover { background: #2e2218; }
+        .resume { width: 100%; max-width: 960px; background-color: #f7f2e8; display: flex; box-shadow: 0 8px 40px rgba(0,0,0,0.15); }
+        .left-col { flex: 1 1 60%; padding: 50px 40px 50px 48px; border-right: 1px solid #ddd8cc; }
+        .name-block { margin-bottom: 28px; }
+        .name-block h1 { font-family: 'Playfair Display', serif; font-size: 2.8em; color: #1a1a1a; line-height: 1.1; letter-spacing: -0.5px; }
+        .name-block .role { font-size: 1em; font-weight: 300; color: #666; margin-top: 4px; letter-spacing: 2px; text-transform: uppercase; }
+        .section-heading { font-size: 0.75em; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #1a1a1a; margin-bottom: 20px; padding-bottom: 8px; border-bottom: 2px solid #1a1a1a; }
+        .section { margin-bottom: 36px; }
+        .entry { display: flex; gap: 16px; margin-bottom: 22px; }
+        .entry-dot-col { display: flex; flex-direction: column; align-items: center; padding-top: 4px; }
+        .dot { width: 11px; height: 11px; border-radius: 50%; border: 2px solid #4a3728; background: transparent; flex-shrink: 0; }
+        .dot-line { width: 1px; flex: 1; background-color: #c8bfb0; margin-top: 5px; }
+        .entry-content { flex: 1; padding-bottom: 10px; }
+        .entry-title { font-size: 0.95em; font-weight: 700; color: #1a1a1a; margin-bottom: 2px; }
+        .entry-company { font-size: 0.82em; font-weight: 600; color: #4a3728; margin-bottom: 2px; }
+        .entry-date { font-size: 0.78em; color: #888; font-style: italic; margin-bottom: 8px; }
+        .entry-desc { font-size: 0.83em; color: #444; line-height: 1.7; }
+        .entry-desc li { list-style: none; padding-left: 12px; position: relative; margin-bottom: 4px; }
+        .entry-desc li::before { content: '›'; position: absolute; left: 0; color: #4a3728; font-weight: 700; }
+        .right-col { flex: 0 0 38%; background-color: #ede8db; padding: 50px 30px 50px 30px; }
+        .contact-block { margin-bottom: 30px; }
+        .contact-item { font-size: 0.82em; color: #444; margin-bottom: 8px; display: flex; gap: 8px; align-items: flex-start; }
+        .contact-label { font-weight: 700; color: #1a1a1a; min-width: 50px; font-size: 0.82em; }
+        .contact-item a { color: #4a3728; text-decoration: none; word-break: break-all; }
+        .contact-item a:hover { text-decoration: underline; }
+        .r-section-heading { font-size: 0.75em; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #1a1a1a; margin-bottom: 14px; padding-bottom: 6px; border-bottom: 2px solid #1a1a1a; }
+        .r-section { margin-bottom: 28px; }
+        .skills-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+        .skills-list li { font-size: 0.83em; color: #444; padding: 5px 0; border-bottom: 1px solid #d4cbbe; display: flex; align-items: center; gap: 6px; }
+        .skills-list li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background-color: #4a3728; flex-shrink: 0; }
+        .awards-list { list-style: none; }
+        .awards-list li { font-size: 0.82em; color: #444; padding: 5px 0; border-bottom: 1px solid #d4cbbe; display: flex; align-items: flex-start; gap: 8px; line-height: 1.5; }
+        .awards-list li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background-color: #4a3728; flex-shrink: 0; margin-top: 5px; }
         @media screen and (max-width: 700px) {
-            .resume {
-                flex-direction: column;
-            }
-            .right-col {
-                flex: none;
-                width: 100%;
-            }
-            .left-col {
-                border-right: none;
-                border-bottom: 1px solid #ddd8cc;
-                padding: 32px 24px;
-            }
-            .right-col {
-                padding: 32px 24px;
-            }
+            .resume { flex-direction: column; }
+            .right-col { flex: none; width: 100%; }
+            .left-col { border-right: none; border-bottom: 1px solid #ddd8cc; padding: 32px 24px; }
+            .right-col { padding: 32px 24px; }
         }
     </style>
 </head>
 <body>
 
     <div class="pdf-button-container">
-        <button class="pdf-download-btn" onclick="window.print()">⬇ Save as PDF</button>
+        <a class="pdf-download-btn"
+           href="https://raw.githubusercontent.com/mrlearner1606/resume/main/Krishna-Resume.pdf"
+           download="Krishna-Resume.pdf">
+            ⬇ Save as PDF
+        </a>
     </div>
 
     <div class="resume">
-
-        <!-- LEFT COLUMN -->
         <div class="left-col">
-
             <div class="name-block">
                 <h1>V Krishna Kumar</h1>
                 <div class="role">Senior Analyst · Data & Automation</div>
             </div>
 
-            <!-- WORK EXPERIENCE -->
             <div class="section">
                 <div class="section-heading">Work Experience</div>
 
                 <div class="entry">
-                    <div class="entry-dot-col">
-                        <div class="dot"></div>
-                        <div class="dot-line"></div>
-                    </div>
+                    <div class="entry-dot-col"><div class="dot"></div><div class="dot-line"></div></div>
                     <div class="entry-content">
                         <div class="entry-title">Senior Analyst</div>
                         <div class="entry-company">Empower &nbsp;|&nbsp; Bangalore, IN</div>
@@ -448,10 +92,7 @@
                 </div>
 
                 <div class="entry">
-                    <div class="entry-dot-col">
-                        <div class="dot"></div>
-                        <div class="dot-line"></div>
-                    </div>
+                    <div class="entry-dot-col"><div class="dot"></div><div class="dot-line"></div></div>
                     <div class="entry-content">
                         <div class="entry-title">Analyst</div>
                         <div class="entry-company">Empower &nbsp;|&nbsp; Bangalore, IN</div>
@@ -465,10 +106,7 @@
                 </div>
 
                 <div class="entry">
-                    <div class="entry-dot-col">
-                        <div class="dot"></div>
-                        <div class="dot-line"></div>
-                    </div>
+                    <div class="entry-dot-col"><div class="dot"></div><div class="dot-line"></div></div>
                     <div class="entry-content">
                         <div class="entry-title">Intern</div>
                         <div class="entry-company">Empower &nbsp;|&nbsp; Bangalore, IN</div>
@@ -481,9 +119,7 @@
                 </div>
 
                 <div class="entry">
-                    <div class="entry-dot-col">
-                        <div class="dot"></div>
-                    </div>
+                    <div class="entry-dot-col"><div class="dot"></div></div>
                     <div class="entry-content">
                         <div class="entry-title">IT Analyst</div>
                         <div class="entry-company">TCS &nbsp;|&nbsp; Chennai, IN</div>
@@ -497,26 +133,18 @@
                 </div>
             </div>
 
-            <!-- EDUCATION -->
             <div class="section">
                 <div class="section-heading">Education</div>
-
                 <div class="entry">
-                    <div class="entry-dot-col">
-                        <div class="dot"></div>
-                        <div class="dot-line"></div>
-                    </div>
+                    <div class="entry-dot-col"><div class="dot"></div><div class="dot-line"></div></div>
                     <div class="entry-content">
                         <div class="entry-title">PGDM – Big Data Analytics</div>
                         <div class="entry-company">Goa Institute of Management &nbsp;|&nbsp; Goa, IN</div>
                         <div class="entry-date">2019 – 2021 &nbsp;·&nbsp; CGPA: 6.33 / 8</div>
                     </div>
                 </div>
-
                 <div class="entry">
-                    <div class="entry-dot-col">
-                        <div class="dot"></div>
-                    </div>
+                    <div class="entry-dot-col"><div class="dot"></div></div>
                     <div class="entry-content">
                         <div class="entry-title">B.Tech – Mechanical Engineering</div>
                         <div class="entry-company">SRM University &nbsp;|&nbsp; Chennai, IN</div>
@@ -524,54 +152,29 @@
                     </div>
                 </div>
             </div>
-
-
-
         </div>
 
-        <!-- RIGHT COLUMN -->
         <div class="right-col">
-
             <img src="profile.jpg" alt="Profile Photo" style="width:50%; height:auto; border-radius:2px; margin-bottom:30px; display:block;">
             <div class="r-section contact-block">
                 <div class="r-section-heading">Contact</div>
-                <div class="contact-item">
-                    <span class="contact-label">Email</span>
-                    <a href="mailto:krrish1606@gmail.com">krrish1606@gmail.com</a>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-label">Phone</span>
-                    <span>(+91) 9094952806</span>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-label">LinkedIn</span>
-                    <a href="https://linkedin.com/in/mrvkrishnakumar/" target="_blank">linkedin.com/in/mrvkrishnakumar/</a>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-label">Location</span>
-                    <span>Chennai, India</span>
-                </div>
+                <div class="contact-item"><span class="contact-label">Email</span><a href="mailto:krrish1606@gmail.com">krrish1606@gmail.com</a></div>
+                <div class="contact-item"><span class="contact-label">Phone</span><span>(+91) 9094952806</span></div>
+                <div class="contact-item"><span class="contact-label">LinkedIn</span><a href="https://linkedin.com/in/mrvkrishnakumar/" target="_blank">linkedin.com/in/mrvkrishnakumar/</a></div>
+                <div class="contact-item"><span class="contact-label">Location</span><span>Chennai, India</span></div>
             </div>
 
             <div class="r-section">
                 <div class="r-section-heading">Skills</div>
                 <ul class="skills-list">
-                    <li>Python</li>
-                    <li>AI Integration (via API)</li>
-                    <li>LangChain Basics</li>
-                    <li>AWS Lambda</li>
-                    <li>Step Functions</li>
-                    <li>Amazon EventBridge</li>
-                    <li>Amazon Textract</li>
-                    <li>S3 Bucket</li>
-                    <li>DynamoDB</li>
-                    <li>Secrets Manager</li>
-                    <li>CloudWatch</li>
-                    <li>CloudFormation</li>
-                    <li>SQS</li>
-                    <li>API Gateway</li>
-                    <li>SAS</li>
-                    <li>Basic SQL</li>
+                    <li>Python</li><li>AI Integration (via API)</li>
+                    <li>LangChain Basics</li><li>AWS Lambda</li>
+                    <li>Step Functions</li><li>Amazon EventBridge</li>
+                    <li>Amazon Textract</li><li>S3 Bucket</li>
+                    <li>DynamoDB</li><li>Secrets Manager</li>
+                    <li>CloudWatch</li><li>CloudFormation</li>
+                    <li>SQS</li><li>API Gateway</li>
+                    <li>SAS</li><li>Basic SQL</li>
                     <li>SAP Web Intelligence</li>
                 </ul>
             </div>
@@ -591,11 +194,9 @@
                 <ul class="awards-list">
                     <li><span><a href="https://youtube.com/@sherlockmode" target="_blank" style="color:#4a3728;">Sherlock Mode</a> – Fully autonomous AI YouTube channel with zero manual intervention</span></li>
                     <li><span><a href="https://mrlearner1606.github.io/quiz" target="_blank" style="color:#4a3728;">AI Quiz App</a> – Live AI-generated quiz app with real-time feedback</span></li>
-					<li><span><a href="https://github.com/mrlearner1606/memory_bot" target="_blank" style="color:#4a3728;">AI Memory Bot</a> – Personal memory assistant using LLMs and Airtable</span></li>
-					
+                    <li><span><a href="https://github.com/mrlearner1606/memory_bot" target="_blank" style="color:#4a3728;">AI Memory Bot</a> – Personal memory assistant using LLMs and Airtable</span></li>
                 </ul>
             </div>
-
         </div>
     </div>
 
