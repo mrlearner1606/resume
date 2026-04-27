@@ -436,6 +436,8 @@
                         <div class="entry-company"><a href="https://www.empower.com" target="_blank" style="color: inherit; text-decoration: none;">Empower</a> &nbsp;|&nbsp; Bangalore, IN</div>
                         <div class="entry-date">Aug 2023 – Present</div>
                         <ul class="entry-desc">
+						    <li>Built a serverless document processing pipeline on AWS (Lambda, Step Functions, Textract, DynamoDB, ECM) to auto-index retirement plan documents by extracting SSNs and Group Account IDs from PDFs and TIFFs — with a Human-in-the-Loop (HITL) layer for low-confidence cases, eliminating hundreds of manual indexing hours daily.</li>
+							<li>Integrated LLaMA 3.3 (70B) into the auto-indexing pipeline to resolve ambiguous extractions where Textract returned conflicting identifiers — leveraging contextual document reasoning and cross-validation against Redshift and a Global ID Service to accurately confirm participant identities.</li>
                             <li>Automated payment registry systems, saving 30 mins of manual effort daily.</li>
                             <li>Automated email extraction via Graph API, saving 2 hours daily through streamlined reporting.</li>
                             <li>Used Amazon Textract to extract PDF table data into Excel, saving 1 hour daily; built a Human-In-The-Loop (HITL) layer for accuracy verification before DB updates.</li>
