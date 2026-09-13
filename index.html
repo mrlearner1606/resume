@@ -3,11 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>V Krishna Kumar - Resume</title>
+    <title>V Krishna Kumar — Senior Analyst, Data &amp; Automation | AWS Certified (SAA · CCP)</title>
+    <meta name="description" content="Resume of V Krishna Kumar — AWS-certified (Solutions Architect Associate & Cloud Practitioner) Senior Analyst specialising in data & automation: serverless AWS pipelines (Lambda, Step Functions, Textract, DynamoDB), LLM integration (LLaMA 3.3, LangChain), Python, SQL and SAS automation.">
+    <meta name="author" content="V Krishna Kumar">
+    <meta name="keywords" content="V Krishna Kumar, resume, AWS, AWS Certified Solutions Architect Associate, AWS Certified Cloud Practitioner, SAA, CCP, serverless, AWS Lambda, Step Functions, Textract, DynamoDB, Redshift, LLM, LangChain, Python, SQL, SAS, automation, data analytics, HITL">
+    <meta property="og:title" content="V Krishna Kumar — Senior Analyst, Data & Automation | AWS Certified">
+    <meta property="og:description" content="AWS-certified data & automation professional. Serverless AWS pipelines, LLM-powered automation, Python, SQL, SAS.">
+    <meta property="og:type" content="profile">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "V Krishna Kumar",
+      "jobTitle": "Senior Analyst — Data & Automation",
+      "description": "AWS-certified (Solutions Architect Associate and Cloud Practitioner) data and automation professional with 10+ years of experience across financial services and IT services. Builds serverless, AI-augmented pipelines on AWS and LLM-powered automation.",
+      "email": "mailto:krrish1606@gmail.com",
+      "telephone": "+91-90949-52806",
+      "url": "https://linkedin.com/in/mrvkrishnakumar/",
+      "sameAs": [
+        "https://linkedin.com/in/mrvkrishnakumar/",
+        "https://github.com/mrlearner1606",
+        "https://youtube.com/@sherlockmode"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Chennai",
+        "addressCountry": "IN"
+      },
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Empower",
+        "url": "https://www.empower.com"
+      },
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "Goa Institute of Management" },
+        { "@type": "CollegeOrUniversity", "name": "SRM University" }
+      ],
+      "knowsAbout": [
+        "AWS", "Serverless Architecture", "AWS Lambda", "AWS Step Functions",
+        "Amazon Textract", "Amazon DynamoDB", "Amazon Redshift", "Amazon EventBridge",
+        "Amazon SQS", "AWS CloudFormation", "Amazon CloudWatch", "AWS API Gateway",
+        "LLM Integration", "LangChain", "Human-in-the-Loop", "Document Intelligence",
+        "Python", "SQL", "SAS", "Workflow Automation", "Data Analytics", "Tableau"
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "Professional Certification",
+          "name": "AWS Certified Solutions Architect – Associate",
+          "abbreviatedName": "AWS SAA",
+          "recognizedBy": { "@type": "Organization", "name": "Amazon Web Services" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "Professional Certification",
+          "name": "AWS Certified Cloud Practitioner",
+          "abbreviatedName": "AWS CCP",
+          "recognizedBy": { "@type": "Organization", "name": "Amazon Web Services" }
+        }
+      ]
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
     <style>
+        :root {
+            --paper: #faf6ed;
+            --paper-2: #f1eadb;
+            --ink: #29231c;
+            --ink-soft: #4d453a;
+            --muted: #8a7f6f;
+            --accent: #4a3728;
+            --accent-deep: #2c2117;
+            --gold: #b3893c;
+            --gold-soft: #d9bd85;
+            --line: #ded4c0;
+            --line-soft: #e6ddcb;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -15,288 +92,498 @@
         }
 
         body {
-            font-family: 'Source Sans 3', sans-serif;
-            background-color: #f0ebe0;
+            font-family: 'Source Sans 3', system-ui, sans-serif;
+            background-color: #e8e1d0;
+            background-image: radial-gradient(#d9d0bb 1px, transparent 1px);
+            background-size: 22px 22px;
+            color: var(--ink);
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 30px 15px;
+            padding: 36px 16px 96px;
             min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
         }
 
+        /* ---------- Download button ---------- */
+
         .pdf-button-container {
-            text-align: center;
-            margin-bottom: 20px;
+            position: fixed;
+            bottom: 22px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 50;
         }
 
         .pdf-download-btn {
-            background: #4a3728;
-            color: #f0ebe0;
+            background: var(--accent-deep);
+            color: #f2ead8;
             border: none;
-            padding: 12px 28px;
-            font-family: 'Source Sans 3', sans-serif;
-            font-size: 14px;
-            font-weight: 600;
-            letter-spacing: 1px;
+            padding: 13px 28px;
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
-            border-radius: 2px;
+            border-radius: 999px;
             cursor: pointer;
-            transition: background 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            box-shadow: 0 10px 30px rgba(44, 33, 23, 0.35);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
         }
 
         .pdf-download-btn:hover {
-            background: #2e2218;
+            background: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 14px 34px rgba(44, 33, 23, 0.4);
         }
+
+        /* ---------- Resume shell ---------- */
 
         .resume {
             width: 100%;
-            max-width: 960px;
-            background-color: #f7f2e8;
+            max-width: 980px;
+            background: var(--paper);
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 24px 70px rgba(44, 33, 23, 0.28);
+        }
+
+        /* ---------- Hero header ---------- */
+
+        .hero {
+            position: relative;
+            background: linear-gradient(130deg, #33261a 0%, #2c2117 55%, #241a12 100%);
+            color: #f3ecdb;
+            padding: 46px 48px 40px;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(600px 300px at 85% -20%, rgba(179, 137, 60, 0.18), transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-monogram {
+            position: absolute;
+            top: -38px;
+            right: 18px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            font-size: 11rem;
+            line-height: 1;
+            color: rgba(217, 189, 133, 0.07);
+            user-select: none;
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.7em;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            line-height: 1.05;
+            position: relative;
+        }
+
+        .hero .role {
+            margin-top: 8px;
+            font-size: 0.95em;
+            font-weight: 300;
+            letter-spacing: 3.5px;
+            text-transform: uppercase;
+            color: var(--gold-soft);
+            position: relative;
+        }
+
+        .hero-rule {
+            width: 64px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), rgba(217, 189, 133, 0.15));
+            border-radius: 2px;
+            margin: 18px 0 20px;
+        }
+
+        .cert-chips {
             display: flex;
-            box-shadow: 0 8px 40px rgba(0,0,0,0.15);
+            flex-wrap: wrap;
+            gap: 10px;
+            position: relative;
+        }
+
+        .cert-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid rgba(217, 189, 133, 0.4);
+            background: rgba(217, 189, 133, 0.09);
+            color: #ecd9a8;
+            padding: 7px 14px;
+            border-radius: 999px;
+            font-size: 0.74em;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+        }
+
+        .cert-chip svg {
+            flex-shrink: 0;
+        }
+
+        /* ---------- Columns ---------- */
+
+        .columns {
+            display: flex;
+            align-items: stretch;
         }
 
         .left-col {
-            flex: 1 1 60%;
-            padding: 50px 40px 50px 48px;
-            border-right: 1px solid #ddd8cc;
+            flex: 1 1 62%;
+            padding: 44px 42px 48px 48px;
+            border-right: 1px solid var(--line);
         }
 
-        .name-block {
-            margin-bottom: 28px;
+        .right-col {
+            flex: 0 0 37%;
+            background: var(--paper-2);
+            border-left: 1px solid var(--line-soft);
+            padding: 44px 30px 48px;
         }
 
-        .name-block h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.8em;
-            color: #1a1a1a;
-            line-height: 1.1;
-            letter-spacing: -0.5px;
-        }
+        /* ---------- Sections ---------- */
 
-        .name-block .role {
-            font-size: 1em;
-            font-weight: 300;
-            color: #666;
-            margin-top: 4px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
+        .section { margin-bottom: 40px; }
+        .section:last-child { margin-bottom: 0; }
 
         .section-heading {
-            font-family: 'Source Sans 3', sans-serif;
-            font-size: 0.75em;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.74em;
             font-weight: 700;
             letter-spacing: 3px;
             text-transform: uppercase;
-            color: #1a1a1a;
-            margin-bottom: 20px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #1a1a1a;
+            color: var(--ink);
+            margin-bottom: 22px;
         }
 
-        .section {
-            margin-bottom: 36px;
+        .section-heading::after {
+            content: '';
+            flex: 1;
+            height: 2px;
+            border-radius: 1px;
+            background: linear-gradient(90deg, var(--gold), var(--line));
         }
+
+        .summary-text {
+            font-size: 0.9em;
+            line-height: 1.8;
+            color: var(--ink-soft);
+        }
+
+        .summary-text strong {
+            color: var(--accent);
+        }
+
+        /* ---------- Timeline entries ---------- */
 
         .entry {
             display: flex;
             gap: 16px;
-            margin-bottom: 22px;
+            margin-bottom: 24px;
         }
+
+        .entry:last-child { margin-bottom: 0; }
 
         .entry-dot-col {
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding-top: 4px;
+            padding-top: 5px;
         }
 
         .dot {
             width: 11px;
             height: 11px;
             border-radius: 50%;
-            border: 2px solid #4a3728;
-            background: transparent;
+            border: 2.5px solid var(--gold);
+            background: var(--paper);
             flex-shrink: 0;
         }
 
         .dot-line {
             width: 1px;
             flex: 1;
-            background-color: #c8bfb0;
-            margin-top: 5px;
+            background: var(--line);
+            margin-top: 6px;
         }
 
         .entry-content {
             flex: 1;
-            padding-bottom: 10px;
+            padding-bottom: 6px;
         }
 
-        .entry-title {
-            font-size: 0.95em;
+        .entry-content h3 {
+            font-size: 0.98em;
             font-weight: 700;
-            color: #1a1a1a;
-            margin-bottom: 2px;
+            color: var(--ink);
         }
 
         .entry-company {
-            font-size: 0.82em;
+            font-size: 0.84em;
             font-weight: 600;
-            color: #4a3728;
-            margin-bottom: 2px;
+            color: var(--accent);
+            margin-top: 2px;
         }
+
+        .entry-company a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .entry-company a:hover { text-decoration: underline; }
 
         .entry-date {
             font-size: 0.78em;
-            color: #888;
+            color: var(--muted);
             font-style: italic;
-            margin-bottom: 8px;
+            margin-top: 2px;
         }
 
         .entry-desc {
-            font-size: 0.83em;
-            color: #444;
+            margin-top: 8px;
+            font-size: 0.85em;
+            color: var(--ink-soft);
             line-height: 1.7;
         }
 
         .entry-desc li {
             list-style: none;
-            padding-left: 12px;
+            padding-left: 14px;
             position: relative;
-            margin-bottom: 4px;
+            margin-bottom: 5px;
         }
 
         .entry-desc li::before {
             content: '›';
             position: absolute;
             left: 0;
-            color: #4a3728;
+            color: var(--gold);
             font-weight: 700;
         }
 
-        .right-col {
-            flex: 0 0 38%;
-            background-color: #ede8db;
-            padding: 50px 30px 50px 30px;
-        }
+        /* ---------- Right column ---------- */
 
-        .photo-box {
-            width: 100%;
-            height: 160px;
-            background-color: #d4cbbe;
-            border-radius: 2px;
-            margin-bottom: 30px;
+        .photo-wrap {
             display: flex;
-            align-items: center;
             justify-content: center;
-            font-size: 0.8em;
-            color: #888;
-            letter-spacing: 1px;
-        }
-
-        .contact-block {
-            margin-bottom: 30px;
-        }
-
-        .contact-item {
-            font-size: 0.82em;
-            color: #444;
-            margin-bottom: 8px;
-            display: flex;
-            gap: 8px;
-            align-items: flex-start;
-        }
-
-        .contact-label {
-            font-weight: 700;
-            color: #1a1a1a;
-            min-width: 50px;
-            font-size: 0.82em;
-        }
-
-        .contact-item a {
-            color: #4a3728;
-            text-decoration: none;
-            word-break: break-all;
-        }
-
-        .contact-item a:hover {
-            text-decoration: underline;
-        }
-
-        .r-section-heading {
-            font-size: 0.75em;
-            font-weight: 700;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: #1a1a1a;
-            margin-bottom: 14px;
-            padding-bottom: 6px;
-            border-bottom: 2px solid #1a1a1a;
-        }
-
-        .r-section {
             margin-bottom: 28px;
         }
 
-        .skills-list {
-            list-style: none;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0;
+        .photo {
+            width: 160px;
+            height: auto;
+            display: block;
+            border-radius: 6px;
+            border: 4px solid #fff;
+            box-shadow: 0 8px 24px rgba(44, 33, 23, 0.18);
         }
 
-        .skills-list li {
-            font-size: 0.83em;
-            color: #444;
-            padding: 5px 0;
-            border-bottom: 1px solid #d4cbbe;
+        .r-section { margin-bottom: 30px; }
+        .r-section:last-child { margin-bottom: 0; }
+
+        .r-section-heading {
             display: flex;
             align-items: center;
+            gap: 10px;
+            font-size: 0.72em;
+            font-weight: 700;
+            letter-spacing: 2.6px;
+            text-transform: uppercase;
+            color: var(--ink);
+            margin-bottom: 14px;
+        }
+
+        .r-section-heading::after {
+            content: '';
+            flex: 1;
+            height: 2px;
+            border-radius: 1px;
+            background: linear-gradient(90deg, var(--gold), var(--line-soft));
+        }
+
+        /* Contact */
+
+        .contact-list { list-style: none; }
+
+        .contact-item {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            margin-bottom: 9px;
+            font-size: 0.84em;
+            color: var(--ink-soft);
+        }
+
+        .contact-item svg {
+            margin-top: 2px;
+            color: var(--gold);
+            flex-shrink: 0;
+        }
+
+        .contact-item a {
+            color: var(--accent);
+            font-weight: 600;
+            text-decoration: none;
+            word-break: break-all;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.15s ease;
+        }
+
+        .contact-item a:hover { border-bottom-color: var(--gold); }
+
+        /* Certifications */
+
+        .cert-card {
+            display: flex;
+            gap: 11px;
+            background: var(--paper);
+            border: 1px solid var(--line);
+            border-left: 3px solid var(--gold);
+            border-radius: 6px;
+            padding: 11px 13px;
+            margin-bottom: 10px;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 18px rgba(44, 33, 23, 0.12);
+        }
+
+        .cert-card svg {
+            color: var(--gold);
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .cert-name {
+            font-size: 0.84em;
+            font-weight: 700;
+            color: var(--ink);
+            line-height: 1.35;
+        }
+
+        .cert-issuer {
+            font-size: 0.76em;
+            color: var(--muted);
+            margin-top: 2px;
+        }
+
+        /* Skills */
+
+        .skill-cat {
+            font-size: 0.72em;
+            font-weight: 700;
+            letter-spacing: 1.6px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin: 14px 0 8px;
+        }
+
+        .skill-group:first-of-type .skill-cat { margin-top: 0; }
+
+        .skill-pills {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
             gap: 6px;
         }
 
-        .skills-list li::before {
-            content: '';
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background-color: #4a3728;
-            flex-shrink: 0;
+        .skill-pills li {
+            font-size: 0.78em;
+            font-weight: 600;
+            color: var(--ink-soft);
+            background: var(--paper);
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            padding: 4px 10px;
+            transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
         }
 
-        .awards-list {
-            list-style: none;
+        .skill-pills li:hover {
+            border-color: var(--gold);
+            color: var(--accent);
+            background: #fff;
         }
 
-        .awards-list li {
-            font-size: 0.82em;
-            color: #444;
-            padding: 5px 0;
-            border-bottom: 1px solid #d4cbbe;
+        /* Awards & projects */
+
+        .plain-list { list-style: none; }
+
+        .plain-list li {
             display: flex;
-            align-items: flex-start;
-            gap: 8px;
-            line-height: 1.5;
+            gap: 9px;
+            font-size: 0.82em;
+            color: var(--ink-soft);
+            line-height: 1.55;
+            padding: 6px 0;
+            border-bottom: 1px solid var(--line-soft);
         }
 
-        .awards-list li::before {
-            content: '';
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background-color: #4a3728;
+        .plain-list li:last-child { border-bottom: none; }
+
+        .plain-list svg {
+            color: var(--gold);
             flex-shrink: 0;
-            margin-top: 5px;
+            margin-top: 3px;
         }
 
-        /* Page 2 spacer - hidden on screen */
-        .page2-spacer {
-            display: none;
+        .plain-list a {
+            color: var(--accent);
+            font-weight: 700;
+            text-decoration: none;
         }
 
-        .page-break-before { display: contents; }
+        .plain-list a:hover { text-decoration: underline; }
+
+        .proj-desc {
+            display: block;
+            margin-top: 1px;
+            color: var(--muted);
+            font-size: 0.94em;
+        }
+
+        /* ---------- Responsive ---------- */
+
+        @media screen and (max-width: 760px) {
+            body { padding: 20px 12px 96px; }
+
+            .hero { padding: 34px 26px 30px; }
+            .hero h1 { font-size: 2.1em; }
+            .hero .role { font-size: 0.8em; letter-spacing: 2.5px; }
+            .hero-monogram { font-size: 7rem; top: -24px; right: 6px; }
+
+            .columns { flex-direction: column; }
+
+            .left-col {
+                border-right: none;
+                border-bottom: 1px solid var(--line);
+                padding: 32px 26px;
+            }
+
+            .right-col {
+                border-left: none;
+                padding: 32px 26px;
+            }
+        }
+
+        /* ---------- Print ---------- */
 
         @page {
             size: A4;
@@ -311,12 +598,8 @@
                 print-color-adjust: exact !important;
             }
 
-            html {
-                background-color: #f7f2e8 !important;
-            }
-
-            body {
-                background-color: #f7f2e8 !important;
+            html, body {
+                background: var(--paper) !important;
                 padding: 0 !important;
                 margin: 0 !important;
                 width: 100% !important;
@@ -324,84 +607,59 @@
 
             .resume {
                 box-shadow: none !important;
+                border-radius: 0 !important;
                 max-width: 100% !important;
                 width: 100% !important;
                 margin: 0 !important;
-                padding: 0 !important;
             }
 
-            .left-col {
-                background-color: #f7f2e8 !important;
-                padding: 10mm 22px 10mm 24px !important;
-            }
+            .hero { padding: 26px 24px 22px !important; }
+            .hero h1 { font-size: 1.8em !important; }
+            .hero .role { font-size: 0.72em !important; margin-top: 4px !important; }
+            .hero-rule { margin: 10px 0 12px !important; }
+            .hero-monogram { font-size: 8rem !important; }
+            .cert-chip { font-size: 0.62em !important; padding: 4px 10px !important; }
 
-            .right-col {
-                background-color: #ede8db !important;
-                padding: 10mm 18px 10mm 18px !important;
-            }
+            .left-col { padding: 22px 20px 24px 24px !important; }
+            .right-col { padding: 22px 16px 24px !important; }
 
-            .name-block { margin-bottom: 7px !important; }
-            .name-block h1 { font-size: 1.75em !important; }
-            .name-block .role { font-size: 0.74em !important; }
-
-            .section { margin-bottom: 10px !important; }
+            .section { margin-bottom: 14px !important; }
 
             .section-heading, .r-section-heading {
-                font-size: 0.66em !important;
-                margin-bottom: 6px !important;
-                padding-bottom: 3px !important;
+                margin-bottom: 8px !important;
+                font-size: 0.64em !important;
+                letter-spacing: 2px !important;
             }
 
-            .entry { margin-bottom: 7px !important; gap: 8px !important; }
-            .entry-content { padding-bottom: 2px !important; }
-            .entry-title { font-size: 0.80em !important; }
-            .entry-company { font-size: 0.73em !important; }
-            .entry-date { font-size: 0.68em !important; margin-bottom: 3px !important; }
+            .summary-text { font-size: 0.76em !important; line-height: 1.55 !important; }
 
-            .entry-desc { font-size: 0.72em !important; line-height: 1.45 !important; }
+            .entry { margin-bottom: 10px !important; gap: 10px !important; }
+            .entry-content { padding-bottom: 2px !important; }
+            .entry-content h3 { font-size: 0.82em !important; }
+            .entry-company { font-size: 0.75em !important; }
+            .entry-date { font-size: 0.7em !important; }
+            .entry-desc { font-size: 0.72em !important; line-height: 1.45 !important; margin-top: 4px !important; }
             .entry-desc li { margin-bottom: 1px !important; }
 
-            .photo-box { height: 100px !important; margin-bottom: 14px !important; font-size: 0.7em !important; }
+            .photo-wrap { margin-bottom: 12px !important; }
+            .photo { width: 104px !important; border-width: 3px !important; }
 
             .r-section { margin-bottom: 14px !important; }
-            .contact-item, .contact-label { font-size: 0.75em !important; margin-bottom: 4px !important; }
-            .skills-list li, .awards-list li { font-size: 0.74em !important; padding: 3px 0 !important; }
-            .dot { width: 8px !important; height: 8px !important; }
+            .contact-item { font-size: 0.75em !important; margin-bottom: 4px !important; }
 
-            .page-break-before {
-                page-break-before: always !important;
-                break-before: page !important;
-                display: flex !important;
-            }
+            .cert-card { padding: 7px 9px !important; margin-bottom: 6px !important; }
+            .cert-name { font-size: 0.74em !important; }
+            .cert-issuer { font-size: 0.66em !important; }
 
-            /* FIX: Match resume background color instead of white */
-            .page2-spacer {
-                display: block !important;
-                page-break-before: always !important;
-                break-before: page !important;
-                height: 1.4em !important;
-                background-color: #f7f2e8 !important;
-                width: 100% !important;
-                margin: 0 !important;
-                padding: 0 !important;
-            }
-        }
+            .skill-cat { font-size: 0.62em !important; margin: 8px 0 5px !important; }
+            .skill-pills { gap: 4px !important; }
+            .skill-pills li { font-size: 0.66em !important; padding: 2px 7px !important; }
 
-        @media screen and (max-width: 700px) {
-            .resume {
-                flex-direction: column;
-            }
-            .right-col {
-                flex: none;
-                width: 100%;
-            }
-            .left-col {
-                border-right: none;
-                border-bottom: 1px solid #ddd8cc;
-                padding: 32px 24px;
-            }
-            .right-col {
-                padding: 32px 24px;
+            .plain-list li { font-size: 0.72em !important; padding: 3px 0 !important; }
+
+            .entry, .cert-card, .skill-group, .plain-list li, .contact-item {
+                break-inside: avoid;
+                page-break-inside: avoid;
             }
         }
     </style>
@@ -409,197 +667,299 @@
 <body>
 
     <div class="pdf-button-container">
-        <button class="pdf-download-btn" onclick="window.location.href='https://raw.githubusercontent.com/mrlearner1606/resume/main/Krishna-Resume.pdf'">⬇ Save as PDF</button>
+        <button class="pdf-download-btn" onclick="window.location.href='https://raw.githubusercontent.com/mrlearner1606/resume/main/Krishna-Resume.pdf'">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Save as PDF
+        </button>
     </div>
 
-    <div class="resume">
+    <main class="resume">
 
-        <!-- LEFT COLUMN -->
-        <div class="left-col">
+        <!-- HERO HEADER -->
+        <header class="hero">
+            <div class="hero-monogram" aria-hidden="true">VK</div>
+            <h1>V Krishna Kumar</h1>
+            <p class="role">Senior Analyst · Data &amp; Automation</p>
+            <div class="hero-rule" aria-hidden="true"></div>
+            <div class="cert-chips" aria-label="Certifications">
+                <span class="cert-chip">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8.5 12.2 2.4 2.4 4.8-5"/></svg>
+                    AWS Certified Solutions Architect — Associate
+                </span>
+                <span class="cert-chip">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8.5 12.2 2.4 2.4 4.8-5"/></svg>
+                    AWS Certified Cloud Practitioner
+                </span>
+            </div>
+        </header>
 
-            <div class="name-block">
-                <h1>V Krishna Kumar</h1>
-                <div class="role">Senior Analyst · Data & Automation</div>
+        <div class="columns">
+
+            <!-- LEFT COLUMN -->
+            <div class="left-col">
+
+                <!-- PROFESSIONAL SUMMARY -->
+                <section class="section" aria-labelledby="summary-h">
+                    <h2 class="section-heading" id="summary-h">Professional Summary</h2>
+                    <p class="summary-text">
+                        AWS-certified data &amp; automation professional (<strong>AWS Certified Solutions Architect – Associate</strong>
+                        and <strong>AWS Certified Cloud Practitioner</strong>) with 10+ years across financial services and IT.
+                        I build serverless, AI-augmented pipelines on AWS — document intelligence with
+                        <strong>Textract</strong>, <strong>Lambda</strong>, <strong>Step Functions</strong> and <strong>DynamoDB</strong>,
+                        and LLM-powered automation with <strong>LLaMA 3.3</strong> and <strong>LangChain</strong> — with a track record
+                        of turning manual, error-prone operations into automated systems that save hundreds of hours.
+                    </p>
+                </section>
+
+                <!-- WORK EXPERIENCE -->
+                <section class="section" aria-labelledby="exp-h">
+                    <h2 class="section-heading" id="exp-h">Work Experience</h2>
+
+                    <article class="entry">
+                        <div class="entry-dot-col">
+                            <div class="dot"></div>
+                            <div class="dot-line"></div>
+                        </div>
+                        <div class="entry-content">
+                            <h3>Senior Analyst</h3>
+                            <div class="entry-company"><a href="https://www.empower.com" target="_blank" rel="noopener">Empower</a> &nbsp;|&nbsp; Bangalore, IN</div>
+                            <div class="entry-date">Aug 2023 – Present</div>
+                            <ul class="entry-desc">
+                                <li>Built a serverless document processing pipeline on AWS (Lambda, Step Functions, Textract, DynamoDB, ECM) to auto-index retirement plan documents by extracting SSNs and Group Account IDs from PDFs and TIFFs — with a Human-in-the-Loop (HITL) layer for low-confidence cases, eliminating hundreds of manual indexing hours daily.</li>
+                                <li>Integrated LLaMA 3.3 (70B) into the auto-indexing pipeline to resolve ambiguous extractions where Textract returned conflicting identifiers — leveraging contextual document reasoning and cross-validation against Redshift and a Global ID Service to accurately confirm participant identities.</li>
+                                <li>Automated payment registry systems, saving 30 mins of manual effort daily.</li>
+                                <li>Automated email extraction via Graph API, saving 2 hours daily through streamlined reporting.</li>
+                                <li>Used Amazon Textract to extract PDF table data into Excel, saving 1 hour daily; built a Human-In-The-Loop (HITL) layer for accuracy verification before DB updates.</li>
+                                <li>Deployed Python-based Lambda functions, Step Functions, and API Gateway using CloudFormation, reducing manual intervention significantly.</li>
+                                <li>Designed an AWS multi-region active-hot standby architecture for high availability and disaster recovery with minimal failover delay.</li>
+                                <li>Implemented SQL validations for loan document processing using Textract + Python + cx_Oracle, reducing verification from hours to minutes.</li>
+                                <li>Built a CloudWatch metric design system and dashboard to visually monitor Lambda/S3/Step Function process health with log insights.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="entry">
+                        <div class="entry-dot-col">
+                            <div class="dot"></div>
+                            <div class="dot-line"></div>
+                        </div>
+                        <div class="entry-content">
+                            <h3>Analyst</h3>
+                            <div class="entry-company"><a href="https://www.empower.com" target="_blank" rel="noopener">Empower</a> &nbsp;|&nbsp; Bangalore, IN</div>
+                            <div class="entry-date">Jul 2021 – Aug 2023</div>
+                            <ul class="entry-desc">
+                                <li>Automated tax reporting using SAS and Python, saving 45 min/day and $30,000 annually in vendor costs.</li>
+                                <li>Automated email deletion, Salesforce request creation, and attachment downloads — saving cumulative hours weekly.</li>
+                                <li>Created multiple SAS reports improving data accessibility and decision-making across teams.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="entry">
+                        <div class="entry-dot-col">
+                            <div class="dot"></div>
+                            <div class="dot-line"></div>
+                        </div>
+                        <div class="entry-content">
+                            <h3>Intern</h3>
+                            <div class="entry-company"><a href="https://www.empower.com" target="_blank" rel="noopener">Empower</a> &nbsp;|&nbsp; Bangalore, IN</div>
+                            <div class="entry-date">May 2020 – Sep 2020</div>
+                            <ul class="entry-desc">
+                                <li>Built topic modeling + logistic regression pipeline (80% accuracy) to classify unstructured NIGO form text.</li>
+                                <li>Developed Tableau dashboard to visualize rejection reasons and provide actionable recommendations.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="entry">
+                        <div class="entry-dot-col">
+                            <div class="dot"></div>
+                        </div>
+                        <div class="entry-content">
+                            <h3>IT Analyst</h3>
+                            <div class="entry-company"><a href="https://www.tcs.com" target="_blank" rel="noopener">TCS</a> &nbsp;|&nbsp; Chennai, IN</div>
+                            <div class="entry-date">Nov 2014 – Aug 2019</div>
+                            <ul class="entry-desc">
+                                <li>Liaised with clients to gather and update requirements; developed and customized reports per spec.</li>
+                                <li>Supervised 2 associates, boosting team efficiency by 20%.</li>
+                                <li>Automated Time-Sheet report generation (saved 15 min/day) and built incident data dashboard for management presentations.</li>
+                            </ul>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- EDUCATION -->
+                <section class="section" aria-labelledby="edu-h">
+                    <h2 class="section-heading" id="edu-h">Education</h2>
+
+                    <article class="entry">
+                        <div class="entry-dot-col">
+                            <div class="dot"></div>
+                            <div class="dot-line"></div>
+                        </div>
+                        <div class="entry-content">
+                            <h3>PGDM – Big Data Analytics</h3>
+                            <div class="entry-company"><a href="https://gim.ac.in/" target="_blank" rel="noopener">Goa Institute of Management</a> &nbsp;|&nbsp; Goa, IN</div>
+                            <div class="entry-date">2019 – 2021 &nbsp;·&nbsp; CGPA: 6.33 / 8</div>
+                        </div>
+                    </article>
+
+                    <article class="entry">
+                        <div class="entry-dot-col">
+                            <div class="dot"></div>
+                        </div>
+                        <div class="entry-content">
+                            <h3>B.Tech – Mechanical Engineering</h3>
+                            <div class="entry-company"><a href="https://www.srmist.edu.in/" target="_blank" rel="noopener">SRM University</a> &nbsp;|&nbsp; Chennai, IN</div>
+                            <div class="entry-date">2010 – 2014 &nbsp;·&nbsp; CGPA: 9.066 / 10</div>
+                        </div>
+                    </article>
+                </section>
+
             </div>
 
-            <!-- WORK EXPERIENCE -->
-            <div class="section">
-                <div class="section-heading">Work Experience</div>
+            <!-- RIGHT COLUMN -->
+            <aside class="right-col">
 
-                <div class="entry">
-                    <div class="entry-dot-col">
-                        <div class="dot"></div>
-                        <div class="dot-line"></div>
+                <div class="photo-wrap">
+                    <img class="photo" src="profile.jpg" alt="Portrait photograph of V Krishna Kumar">
+                </div>
+
+                <!-- CONTACT -->
+                <section class="r-section" aria-labelledby="contact-h">
+                    <h2 class="r-section-heading" id="contact-h">Contact</h2>
+                    <ul class="contact-list">
+                        <li class="contact-item">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+                            <a href="mailto:krrish1606@gmail.com">krrish1606@gmail.com</a>
+                        </li>
+                        <li class="contact-item">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <span>(+91) 9094952806</span>
+                        </li>
+                        <li class="contact-item">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                            <a href="https://linkedin.com/in/mrvkrishnakumar/" target="_blank" rel="noopener">linkedin.com/in/mrvkrishnakumar</a>
+                        </li>
+                        <li class="contact-item">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span>Chennai, India</span>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- CERTIFICATIONS -->
+                <section class="r-section" aria-labelledby="cert-h">
+                    <h2 class="r-section-heading" id="cert-h">Certifications</h2>
+                    <div class="cert-card">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></svg>
+                        <div>
+                            <div class="cert-name">AWS Certified Solutions Architect – Associate</div>
+                            <div class="cert-issuer">Amazon Web Services · SAA</div>
+                        </div>
                     </div>
-                    <div class="entry-content">
-                        <div class="entry-title">Senior Analyst</div>
-                        <div class="entry-company"><a href="https://www.empower.com" target="_blank" style="color: inherit; text-decoration: none;">Empower</a> &nbsp;|&nbsp; Bangalore, IN</div>
-                        <div class="entry-date">Aug 2023 – Present</div>
-                        <ul class="entry-desc">
-						    <li>Built a serverless document processing pipeline on AWS (Lambda, Step Functions, Textract, DynamoDB, ECM) to auto-index retirement plan documents by extracting SSNs and Group Account IDs from PDFs and TIFFs — with a Human-in-the-Loop (HITL) layer for low-confidence cases, eliminating hundreds of manual indexing hours daily.</li>
-							<li>Integrated LLaMA 3.3 (70B) into the auto-indexing pipeline to resolve ambiguous extractions where Textract returned conflicting identifiers — leveraging contextual document reasoning and cross-validation against Redshift and a Global ID Service to accurately confirm participant identities.</li>
-                            <li>Automated payment registry systems, saving 30 mins of manual effort daily.</li>
-                            <li>Automated email extraction via Graph API, saving 2 hours daily through streamlined reporting.</li>
-                            <li>Used Amazon Textract to extract PDF table data into Excel, saving 1 hour daily; built a Human-In-The-Loop (HITL) layer for accuracy verification before DB updates.</li>
-                            <li>Deployed Python-based Lambda functions, Step Functions, and API Gateway using CloudFormation, reducing manual intervention significantly.</li>
-                            <li>Designed an AWS multi-region active-hot standby architecture for high availability and disaster recovery with minimal failover delay.</li>
-                            <li>Implemented SQL validations for loan document processing using Textract + Python + cx_Oracle, reducing verification from hours to minutes.</li>
-                            <li>Built a CloudWatch metric design system and dashboard to visually monitor Lambda/S3/Step Function process health with log insights.</li>
+                    <div class="cert-card">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></svg>
+                        <div>
+                            <div class="cert-name">AWS Certified Cloud Practitioner</div>
+                            <div class="cert-issuer">Amazon Web Services · CCP</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SKILLS -->
+                <section class="r-section" aria-labelledby="skills-h">
+                    <h2 class="r-section-heading" id="skills-h">Skills</h2>
+
+                    <div class="skill-group">
+                        <div class="skill-cat">Cloud &amp; Serverless (AWS)</div>
+                        <ul class="skill-pills">
+                            <li>AWS Lambda</li>
+                            <li>Step Functions</li>
+                            <li>API Gateway</li>
+                            <li>DynamoDB</li>
+                            <li>Amazon S3</li>
+                            <li>Amazon Textract</li>
+                            <li>EventBridge</li>
+                            <li>SQS</li>
+                            <li>CloudWatch</li>
+                            <li>CloudFormation</li>
+                            <li>Secrets Manager</li>
+                            <li>Redshift</li>
                         </ul>
                     </div>
-                </div>
 
-                <div class="entry">
-                    <div class="entry-dot-col">
-                        <div class="dot"></div>
-                        <div class="dot-line"></div>
-                    </div>
-                    <div class="entry-content">
-                        <div class="entry-title">Analyst</div>
-                        <div class="entry-company"><a href="https://www.empower.com" target="_blank" style="color: inherit; text-decoration: none;">Empower</a> &nbsp;|&nbsp; Bangalore, IN</div>
-                        <div class="entry-date">Jul 2021 – Aug 2023</div>
-                        <ul class="entry-desc">
-                            <li>Automated tax reporting using SAS and Python, saving 45 min/day and $30,000 annually in vendor costs.</li>
-                            <li>Automated email deletion, Salesforce request creation, and attachment downloads — saving cumulative hours weekly.</li>
-                            <li>Created multiple SAS reports improving data accessibility and decision-making across teams.</li>
+                    <div class="skill-group">
+                        <div class="skill-cat">AI &amp; Automation</div>
+                        <ul class="skill-pills">
+                            <li>LLM Integration (APIs)</li>
+                            <li>LangChain</li>
+                            <li>Human-in-the-Loop (HITL)</li>
+                            <li>Microsoft Graph API</li>
+                            <li>Workflow Automation</li>
                         </ul>
                     </div>
-                </div>
 
-                <div class="entry">
-                    <div class="entry-dot-col">
-                        <div class="dot"></div>
-                        <div class="dot-line"></div>
-                    </div>
-                    <div class="entry-content">
-                        <div class="entry-title">Intern</div>
-                        <div class="entry-company"><a href="https://www.empower.com" target="_blank" style="color: inherit; text-decoration: none;">Empower</a> &nbsp;|&nbsp; Bangalore, IN</div>
-                        <div class="entry-date">May 2020 – Sep 2020</div>
-                        <ul class="entry-desc">
-                            <li>Built topic modeling + logistic regression pipeline (80% accuracy) to classify unstructured NIGO form text.</li>
-                            <li>Developed Tableau dashboard to visualize rejection reasons and provide actionable recommendations.</li>
+                    <div class="skill-group">
+                        <div class="skill-cat">Data &amp; Analytics</div>
+                        <ul class="skill-pills">
+                            <li>Python</li>
+                            <li>SQL</li>
+                            <li>SAS</li>
+                            <li>SAP Web Intelligence</li>
+                            <li>Tableau</li>
                         </ul>
                     </div>
-                </div>
+                </section>
 
-                <div class="entry">
-                    <div class="entry-dot-col">
-                        <div class="dot"></div>
-                    </div>
-                    <div class="entry-content">
-                        <div class="entry-title">IT Analyst</div>
-                        <div class="entry-company"><a href="https://www.tcs.com" target="_blank" style="color: inherit; text-decoration: none;">TCS</a> &nbsp;|&nbsp; Chennai, IN</div>
-                        <div class="entry-date">Nov 2014 – Aug 2019</div>
-                        <ul class="entry-desc">
-                            <li>Liaised with clients to gather and update requirements; developed and customized reports per spec.</li>
-                            <li>Supervised 2 associates, boosting team efficiency by 20%.</li>
-                            <li>Automated Time-Sheet report generation (saved 15 min/day) and built incident data dashboard for management presentations.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+                <!-- AWARDS -->
+                <section class="r-section" aria-labelledby="awards-h">
+                    <h2 class="r-section-heading" id="awards-h">Awards</h2>
+                    <ul class="plain-list">
+                        <li>
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <span>Multiple recognitions at Empower</span>
+                        </li>
+                        <li>
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <span>VIP Award – Tax automation saving 45 min/day at Empower</span>
+                        </li>
+                        <li>
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <span>Best Team Award – Customer satisfaction at TCS</span>
+                        </li>
+                        <li>
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <span>On the Spot Award – Dedication &amp; sincerity at TCS</span>
+                        </li>
+                    </ul>
+                </section>
 
-            <!-- EDUCATION -->
-            <div class="section">
-                <div class="section-heading">Education</div>
+                <!-- PERSONAL PROJECTS -->
+                <section class="r-section" aria-labelledby="proj-h">
+                    <h2 class="r-section-heading" id="proj-h">Personal Projects</h2>
+                    <ul class="plain-list">
+                        <li>
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+                            <span><a href="https://youtube.com/@sherlockmode" target="_blank" rel="noopener">Sherlock Mode</a>
+                            <span class="proj-desc">Fully autonomous AI YouTube channel with minimum manual maintenance once a week.</span></span>
+                        </li>
+                        <li>
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            <span><a href="https://mrlearner1606.github.io/quiz" target="_blank" rel="noopener">AI Quiz App</a>
+                            <span class="proj-desc">Live AI-generated quiz app with real-time feedback.</span></span>
+                        </li>
+                        <li>
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                            <span><a href="https://github.com/mrlearner1606/memory_bot" target="_blank" rel="noopener">AI Memory Bot</a>
+                            <span class="proj-desc">Personal memory assistant using LLMs and Airtable.</span></span>
+                        </li>
+                    </ul>
+                </section>
 
-                <div class="entry">
-                    <div class="entry-dot-col">
-                        <div class="dot"></div>
-                        <div class="dot-line"></div>
-                    </div>
-                    <div class="entry-content">
-                        <div class="entry-title">PGDM – Big Data Analytics</div>
-                        <div class="entry-company"><a href="https://gim.ac.in/" target="_blank" style="color: inherit; text-decoration: none;">Goa Institute of Management</a> &nbsp;|&nbsp; Goa, IN</div>
-                        <div class="entry-date">2019 – 2021 &nbsp;·&nbsp; CGPA: 6.33 / 8</div>
-                    </div>
-                </div>
-
-                <div class="entry">
-                    <div class="entry-dot-col">
-                        <div class="dot"></div>
-                    </div>
-                    <div class="entry-content">
-                        <div class="entry-title">B.Tech – Mechanical Engineering</div>
-                        <div class="entry-company"><a href="https://www.srmist.edu.in/" target="_blank" style="color: inherit; text-decoration: none;">SRM University</a> &nbsp;|&nbsp; Chennai, IN</div>
-                        <div class="entry-date">2010 – 2014 &nbsp;·&nbsp; CGPA: 9.066 / 10</div>
-                    </div>
-                </div>
-            </div>
-
-
-
+            </aside>
         </div>
-
-        <!-- RIGHT COLUMN -->
-        <div class="right-col">
-
-            <img src="profile.jpg" alt="Profile Photo" style="width:50%; height:auto; border-radius:2px; margin-bottom:30px; display:block;">
-            <div class="r-section contact-block">
-                <div class="r-section-heading">Contact</div>
-                <div class="contact-item">
-                    <span class="contact-label">Email</span>
-                    <a href="mailto:krrish1606@gmail.com">krrish1606@gmail.com</a>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-label">Phone</span>
-                    <span>(+91) 9094952806</span>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-label">LinkedIn</span>
-                    <a href="https://linkedin.com/in/mrvkrishnakumar/" target="_blank">linkedin.com/in/mrvkrishnakumar/</a>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-label">Location</span>
-                    <span>Chennai, India</span>
-                </div>
-            </div>
-
-            <div class="r-section">
-                <div class="r-section-heading">Skills</div>
-                <ul class="skills-list">
-                    <li>Python</li>
-                    <li>AI Integration (via API)</li>
-                    <li>LangChain Basics</li>
-                    <li>AWS Lambda</li>
-                    <li>Step Functions</li>
-                    <li>Amazon EventBridge</li>
-                    <li>Amazon Textract</li>
-                    <li>S3 Bucket</li>
-                    <li>DynamoDB</li>
-                    <li>Secrets Manager</li>
-                    <li>CloudWatch</li>
-                    <li>CloudFormation</li>
-                    <li>SQS</li>
-                    <li>API Gateway</li>
-                    <li>SAS</li>
-                    <li>SQL</li>
-                    <li>SAP Web Intelligence</li>
-                </ul>
-            </div>
-
-            <div class="r-section">
-                <div class="r-section-heading">Awards</div>
-                <ul class="awards-list">
-                    <li>Multiple recognitions at Empower</li>
-                    <li>VIP Award – Tax automation saving 45 min/day at Empower</li>
-                    <li>Best Team Award – Customer satisfaction at TCS</li>
-                    <li>On the Spot Award – Dedication & sincerity at TCS</li>
-                </ul>
-            </div>
-
-            <div class="r-section">
-                <div class="r-section-heading">Personal Projects</div>
-                <ul class="awards-list">
-                    <li><span><a href="https://youtube.com/@sherlockmode" target="_blank" style="color:#4a3728;">Sherlock Mode</a> – Fully autonomous AI YouTube channel with minimum manual maintenance once a week.</span></li>
-                    <li><span><a href="https://mrlearner1606.github.io/quiz" target="_blank" style="color:#4a3728;">AI Quiz App</a> – Live AI-generated quiz app with real-time feedback</span></li>
-					<li><span><a href="https://github.com/mrlearner1606/memory_bot" target="_blank" style="color:#4a3728;">AI Memory Bot</a> – Personal memory assistant using LLMs and Airtable</span></li>
-					
-                </ul>
-            </div>
-
-        </div>
-    </div>
+    </main>
 
 </body>
 </html>
