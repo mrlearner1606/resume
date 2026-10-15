@@ -302,6 +302,8 @@
         }
 
         .plain-list li {
+            position: relative;
+            padding-left: 16px;
             font-size: 0.9em;
             color: var(--ink-soft);
             line-height: 1.6;
@@ -312,9 +314,11 @@
 
         .plain-list li::before {
             content: '•';
+            position: absolute;
+            left: 0;
+            top: 0;
             color: var(--gold);
             font-weight: 700;
-            margin-right: 8px;
         }
 
         .plain-list a {
