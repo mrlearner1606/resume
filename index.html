@@ -470,15 +470,14 @@
                 </div>
                 <div class="entry-company"><a href="https://www.empower.com" target="_blank" rel="noopener">Empower</a> | Bangalore, IN</div>
                 <ul class="entry-desc">
-                    <li>Built a serverless document processing pipeline on AWS (Lambda, Step Functions, Textract, DynamoDB, ECM) to auto-index retirement plan documents by extracting SSNs and Group Account IDs from PDFs and TIFFs — with a Human-in-the-Loop (HITL) layer for low-confidence cases, eliminating hundreds of manual indexing hours daily.</li>
-                    <li>Integrated LLaMA 3.3 (70B) into the auto-indexing pipeline to resolve ambiguous extractions, where Textract returned conflicting identifiers. The model’s output is checked against the database to confirm the data is present.</li>
-                    <li>Automated payment registry systems, saving 30 mins of manual effort daily.</li>
-                    <li>Automated email extraction via Graph API, saving 2 hours daily through streamlined reporting.</li>
-                    <li>Used Amazon Textract to extract PDF table data into Excel, saving 1 hour daily; built a Human-In-The-Loop (HITL) layer for accuracy verification before DB updates.</li>
-                    <li>Deployed Python-based Lambda functions, Step Functions, and API Gateway using CloudFormation, reducing manual intervention significantly.</li>
-                    <li>Designed an AWS multi-region active-hot standby architecture for high availability and disaster recovery with minimal failover delay.</li>
-                    <li>Implemented SQL validations for loan document processing using Textract + Python + cx_Oracle, reducing verification from hours to minutes.</li>
-                    <li>Built a CloudWatch metric design system and dashboard to visually monitor Lambda/S3/Step Function process health with log insights.</li>
+                    <li>Built a serverless pipeline on AWS using Lambda, Step Functions, Textract, and DynamoDB. It auto-indexes retirement plan documents by filling in the matching Hyland OnBase index fields, such as SSN, account number, and customer name, straight from each PDF or TIFF. Low-confidence cases go to a human reviewer, which removed hundreds of manual indexing hours a day.</li>
+                    <li>Added LLaMA 3.3 (70B) to the pipeline to find the customer's account number. Textract sometimes returned both the customer's and the beneficiary's account numbers, and the model picks the right one. Its output is then checked against the database.</li>
+                    <li>Automated payment registry processing. SAS combines data from multiple sources into several Excel files, then merges and formats them and sends an automated email when the report is delivered. This saves 30 minutes of manual work a day.</li>
+                    <li>Automated email extraction through the Graph API. The body of each email is pulled out, turned into an Excel sheet, and saved to a network location. This saves 2 hours a day in reporting.</li>
+                    <li>Used Amazon Textract to convert table data in PDFs into Excel, saving 1 hour a day. Added a human review step so people approve the data before the database is updated.</li>
+                    <li>Designed an AWS multi-region active-hot standby architecture for high availability and disaster recovery, with minimal failover delay. Built a CloudWatch dashboard with two buttons, us-east-1 and us-west-2. If us-east-1 goes down, the process can be run from us-west-2 by clicking the button, and vice versa.</li>
+                    <li>Built SQL validations for loan document processing. Textract and Python pull the loan amount, account number, and participant name from each document, then compare them against the Oracle database. Applications either move forward for further processing or go to manual review. This cut verification time from hours to minutes.</li>
+                    <li>Built a CloudWatch metrics system and dashboard to monitor Lambda, S3, and Step Functions health, with Log Insights.</li>
                 </ul>
             </article>
 
