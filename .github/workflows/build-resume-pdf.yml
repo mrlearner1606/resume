@@ -1,0 +1,49 @@
+name: Build resume PDF
+
+# Whenever index.html changes on main (direct edit/upload or a merged PR),
+# render it to PDF and commit the result over Krishna-Resume.pdf.
+# Only index.html is watched, so the bot's own PDF commit does not re-trigger this.
+on:
+  push:
+    branches: [main]
+    paths:
+      - index.html
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-resume-pdf
+  cancel-in-progress: false
+
+jobs:
+  build-pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Playwright and Chromium
+        run: |
+          pip install playwright
+          playwright install --with-deps chromium
+
+      - name: Render index.html to Krishna-Resume.pdf
+        run: python .github/scripts/html_to_pdf.py index.html Krishna-Resume.pdf
+
+      - name: Commit updated PDF
+        run: |
+          if [ -z "$(git status --porcelain Krishna-Resume.pdf)" ]; then
+            echo "PDF unchanged, nothing to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Krishna-Resume.pdf
+          git commit -m "Update Krishna-Resume.pdf from index.html"
+          git pull --rebase origin main
+          git push origin HEAD:main
