@@ -2,12 +2,15 @@ name: Build resume PDF
 
 # Whenever index.html changes on main (direct edit/upload or a merged PR),
 # render it to PDF and commit the result over Krishna-Resume.pdf.
-# Only index.html is watched, so the bot's own PDF commit does not re-trigger this.
+# Also rebuilds when the render script or this workflow changes.
+# The bot's own PDF commit touches none of these paths, so it does not re-trigger this.
 on:
   push:
     branches: [main]
     paths:
       - index.html
+      - .github/scripts/html_to_pdf.py
+      - .github/workflows/build-resume-pdf.yml
   workflow_dispatch:
 
 permissions:
