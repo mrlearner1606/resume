@@ -16,7 +16,9 @@ if not src.is_file():
     sys.exit(f"Input not found: {src}")
 
 with sync_playwright() as p:
-    browser = p.chromium.launch()
+    # Headless Chromium on Linux hints fonts by default, which squeezes word/letter spacing.
+    # Turning hinting off matches what Chrome produces for Ctrl+P > Save as PDF.
+    browser = p.chromium.launch(args=["--font-render-hinting=none"])
     page = browser.new_page()
     # Wait for Google Fonts (Playfair Display, Source Sans 3) so the PDF matches the web page
     page.goto(src.as_uri(), wait_until="networkidle", timeout=60_000)
